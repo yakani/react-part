@@ -1,0 +1,248 @@
+.imd{
+    width: 100px;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  
+  body{
+      height: 100%;
+      width: auto;
+      font-family: 'poppins', sans-serif;
+  
+  }
+  h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  h3{
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  h5{
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+  }
+  h6{
+    color: #d8d8d8;
+  }
+  button{
+    font-weight: 700;
+    font-size: 0.8rem;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: aliceblue;
+    padding: 13px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3 ease;
+   }
+   button :hover{
+    background-color: #3a3833;
+   }
+   hr{
+    width: 30px;
+    height: 2px;
+    background-color: #fb774b;
+   }
+   .star{
+    padding: 10px 0;
+  }
+  .star i {
+    color: gold;
+   font-size: 0.8rem; 
+  }
+  .navbar{
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    
+  }
+  .navbar-light .navbar-nav .nav-link{
+    padding: 0 20px;
+    color: black;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+  .nav-link:hover{
+    font-size: 100px;
+    color: aqua;
+  }
+  .navbar i{
+  font-size: 1.2rem;
+  padding: 0 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+  
+  }
+  
+  
+  #home span{
+    color: coral;
+   }
+   .sub:hover{
+  cursor: pointer;
+   }
+   #home{
+    background-image: url("/photos/nash_1.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position:  top center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+  }
+  .img-fluid{
+    width: 60%;
+    height: 35vh;
+  }
+  
+  .product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+  .product img {
+    transition: 0.3s all;
+  }
+  .product:hover img {
+    opacity: 0.7;
+  }
+  .product .buy-btn {
+    background: #fb774b;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s all;
+  }
+  .product:hover .buy-btn {
+    transform: translateY(0);
+    opacity: 1;
+    }
+    #banner {
+      background-image: url("/photos/b1.jpg");
+      width: 100%;
+      height: 60vh;
+      background-size: cover;
+      background-position: top 70px center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      flex-direction: column;
+      justify-content: center;
+      display: flex;
+      align-items: flex-start;
+    } 
+    #banner h4{
+      color: #d8d8d8;
+    }
+    #banner h1{
+      color: #fff;
+    }
+    #banner button {
+      background-color: #fb774b;
+    }
+    .ims-fluid{
+      width: 100%;
+      height: 50vh;
+  
+    }
+    footer{
+      background-color: #3a3833;
+    }
+    .footer-two { position: top end;
+         text-align: end;
+         display: contents;
+    }
+    .special{
+      visibility: hidden;
+      font-size: 1px;
+    }
+    footer h5 {
+      color: black;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    footer li {
+      padding-bottom: 4px;
+    }
+    footer li a {
+      font-size: 0.8rem;
+      color: black ;
+    }
+    footer li a:hover {
+      color: black;
+    }
+    footer p {
+      color: black;
+      font-size: 0.8rem;
+     
+    }
+    footer p a {
+      text-decoration: none;
+      color: #f63e4e;
+      font-weight: bold;
+    }
+    footer .copyright a {
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      background-color: black;
+      display: inline-block;
+      text-align: center;
+      transition: 5px;
+      margin: 0 5px;
+      position: left bottom;
+    }
+    footer .copyright a:hover{
+      color: #fff;
+      background-color: #fb774b;
+    }
+    .fin{
+      text-align: center;
+      line-height: 10vh;
+    }
+    .text-uppercase{
+      color: black;
+    }
+    .sproduct select{
+      display: block;
+      padding: 5px 10px;
+    }
+   .sproduct input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+   }
+   .sproduct input:focus{
+    outline: none;
+   }
+   .buy-btn{
+    background-color: #fb774b;
+    opacity: 1;
+    transition: 0.3s all;
+   }
+   .nav-item {
+    marker: none;
+    text-decoration: none;
+   }
+   .border{
+    border:3px solid #3a3833;
+      border-style: ridge;
+      border-color: #3a3833;
+   }
