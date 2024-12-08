@@ -1,5 +1,5 @@
 
-const url = "https://backend-iota-three-50.vercel.ap";
+const url = "https://backend-iota-three-50.vercel.app";
 const AddItem = async (params)=>{
     const res = await fetch(url+'/api/v2/goal',{
       method:"POST",
