@@ -78,7 +78,8 @@ const Productpage = ({addconsted ,userid}) => {
 
 const Productloader = async({params})=>{
     try {
-        const resp = await fetch('http://localhost:7000/api/v2/goal/'+params.id);
+        const url = "https://backend-iota-three-50.vercel.app";
+        const resp = await fetch(url+'/api/v2/goal/'+params.id);
         const data = await resp.json();
         return data;
        
