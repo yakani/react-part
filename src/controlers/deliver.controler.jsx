@@ -1,4 +1,4 @@
-const url = "https://backend-iota-three-50.vercel.ap/";
+const url = "https://backend-iota-three-50.vercel.ap";
 const LoginDeliver = async(params)=>{
     const res = await fetch(url+'/api/v2/deliver/login',{
       method: "POST",
