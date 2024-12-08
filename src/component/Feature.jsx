@@ -9,7 +9,7 @@ const Feature = ({ishome=false}) => {
   useEffect(()=>{
     const collected= async()=>{
       try {
-        const resp = await  fetch('https://backend-iotha-three-50.vercel.app/api/v2/goal');
+        const resp = await  fetch('https://backend-iota-three-50.vercel.app/api/v2/goal');
         const goal = await resp.json();
         setgoals(goal);
       } catch (error) {
