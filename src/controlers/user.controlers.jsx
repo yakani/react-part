@@ -1,4 +1,4 @@
-const url = "https://backend-iota-three-50.vercel.ap";
+const url = "https://backend-iota-three-50.vercel.app";
 import axios from "axios"
 let ishome =localStorage.getItem('ishome');
   let time = localStorage.getItem('timeuser');
