@@ -1,5 +1,6 @@
+const url = "https://backend-iota-three-50.vercel.ap/";
 const LoginDeliver = async(params)=>{
-    const res = await fetch('http://localhost:7000/api/v2/deliver/login',{
+    const res = await fetch(url+'/api/v2/deliver/login',{
       method: "POST",
       headers:{
         'Content-Type':'application/json'
@@ -13,14 +14,14 @@ const LoginDeliver = async(params)=>{
  }
 
  const DeleteDeliver = async (id)=>{
-    const res =  await fetch('http://localhost:7000/api/v2/deliver/'+id,{
+    const res =  await fetch(url+'/api/v2/deliver/'+id,{
       method:"DELETE",
       
     });
     return;
   }
   const insertdeliver = async (params)=>{
-    const res = await fetch('http://localhost:7000/api/v2/deliver',{
+    const res = await fetch(url+'/api/v2/deliver',{
      method:"POST",
      headers:{
        'Content-Type':'application/json'
