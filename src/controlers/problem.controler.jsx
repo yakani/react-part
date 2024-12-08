@@ -1,4 +1,4 @@
-const api =  "https://backend-iota-three-50.vercel.ap";
+const api =  "https://backend-iota-three-50.vercel.app";
 const Insertpb = async(params)=>{
 
     const res = await fetch(api+"problem",{
