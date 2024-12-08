@@ -1,4 +1,4 @@
-const url = "https://backend-iota-three-50.vercel.ap";
+const url = "https://backend-iota-three-50.vercel.app";
 const DeleteTrans = async (id)=>{
     const res =  await fetch(url+'/trans/'+id,{
       method:"DELETE",
