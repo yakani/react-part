@@ -1,5 +1,7 @@
+
+const url = "https://backend-iota-three-50.vercel.ap";
 const AddItem = async (params)=>{
-    const res = await fetch('http://localhost:7000/api/v2/goal',{
+    const res = await fetch(url+'/api/v2/goal',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -10,7 +12,7 @@ const AddItem = async (params)=>{
   }
 
   const Updateitem = async(id,params)=>{
-    const res = await fetch('http://localhost:7000/api/v2/goal/'+id, {
+    const res = await fetch(url+'/api/v2/goal/'+id, {
       method: 'PUT',
       headers:{
         'Content-Type':'application/json'
@@ -21,7 +23,7 @@ const AddItem = async (params)=>{
   
   }
   const DeleteItem = async (id)=>{
-    const res =  await fetch('http://localhost:7000/api/v2/goal/'+id,{
+    const res =  await fetch(url+'/api/v2/goal/'+id,{
       method:"DELETE",
     });
     return;
