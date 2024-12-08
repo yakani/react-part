@@ -11,6 +11,7 @@ const AdimPage = ({Item_remove,Delete_deliver,admin,Logout}) => {
     const [delivers,setdeliver] = useState([]);
     const [goals,setgoals] = useState([]);
     const [loading,setloading] = useState(true);
+    const url = "https://backend-iota-three-50.vercel.ap";
     const LogoutAdmin = ()=>{
       Logout();
        navigate('/login');
@@ -36,7 +37,7 @@ const AdimPage = ({Item_remove,Delete_deliver,admin,Logout}) => {
         if(!admin)return navigate('/admin/login');
         const Fetchdeliver = async ()=>{
             try {
-                const res  = await fetch('http://localhost:7000/api/v2/deliver');
+                const res  = await fetch(url+'/api/v2/deliver');
                 const data = await res.json();
                 setdeliver(data);
             } catch (error) {
@@ -47,7 +48,7 @@ const AdimPage = ({Item_remove,Delete_deliver,admin,Logout}) => {
         }
         const Fetchgoal = async ()=>{
             try {
-                const res  = await fetch('http://localhost:7000/api/v2/goal');
+                const res  = await fetch(url+'/api/v2/goal');
                 const data = await res.json();
                 setgoals(data);
             } catch (error) {
