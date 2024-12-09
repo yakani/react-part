@@ -1,4 +1,4 @@
-
+const url = "https://backend-iota-three-50.vercel.app";
 import axios from "axios"
 let ishome =localStorage.getItem('ishome');
   let time = localStorage.getItem('timeuser');
@@ -18,7 +18,7 @@ let ishome =localStorage.getItem('ishome');
 
   const  Login = async (params)=>{
     try {
-      const res  = await fetch("http://localhost:7000/api/v2/user/auth",{
+      const res  = await fetch(url+"/api/v2/user/auth",{
         method:"POST",
         headers:{
           'Content-Type':'application/json'
@@ -36,7 +36,7 @@ let ishome =localStorage.getItem('ishome');
   }
 
   const update = async (params) =>{
-    const res  = await fetch('http://localhost:7000/api/v2/user',{
+    const res  = await fetch(url+'/api/v2/user',{
       method:"PUT",
       headers:{
         'Content-Type':'application/json'
@@ -47,15 +47,15 @@ let ishome =localStorage.getItem('ishome');
   }
   const SingUp = async()=>{
     Setusertime(false);
-    window.location.href='http://localhost:7000/auth/google/sign';
+    window.location.href=url+'/auth/google/sign';
   }
   const SingIn = async ()=>{
      Setusertime(false);
-    window.location.href='http://localhost:7000/auth/google';
+    window.location.href=url+'/auth/google';
    
   }
   const logout = async()=>{
-    const logout=await fetch('http://localhost:7000/api/v2/user/logout',{
+    const logout=await fetch(url+'/api/v2/user/logout',{
       method:"POST",
     });  
   
@@ -67,7 +67,7 @@ let ishome =localStorage.getItem('ishome');
   }
   const userdata= async ()=>{
     try {
-      const rest = await axios.get('http://localhost:7000/api/v2/user/profile',{
+      const rest = await axios.get(url+'/api/v2/user/profile',{
         withCredentials:true
       });
      Setusertime(false);

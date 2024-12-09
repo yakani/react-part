@@ -9,12 +9,13 @@ import { Helmet } from 'react-helmet';
 const Deviler = ({Remove}) => {
   const Employ = useLoaderData();
   const [tasks,settasks] = useState([]);
+  const url = "https://backend-iota-three-50.vercel.app";
   const [loading,setloading] = useState(true);
   const {id} = useParams();
   useEffect(()=>{
     const Gettask = async() =>{
         try {
-            const res = await fetch('http://localhost:7000/api/v2/trans');
+            const res = await fetch(url+'/api/v2/trans');
             const resp = await res.json();
           let resp2 = [];
           let x= 0;
@@ -54,7 +55,8 @@ const Deviler = ({Remove}) => {
 }
 const DataDeliver = async({params})=>{
     try {
-const res = await fetch('http://localhost:7000/api/v2/deliver/'+params._id,{
+      const url = "https://backend-iota-three-50.vercel.app";
+const res = await fetch(url+'/api/v2/deliver/'+params._id,{
   credentials:"include"
 });
   const resp = await res.json();

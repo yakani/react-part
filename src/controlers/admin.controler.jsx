@@ -1,5 +1,6 @@
 let isadmin = localStorage.getItem('isadmin');
 let admintime = localStorage.getItem('timeoutadmin');
+const url = "https://backend-iota-three-50.vercel.app";
 const saveAdmin = ()=>{
     localStorage.setItem('isadmin',isadmin);
     localStorage.setItem('timeoutadmin',admintime);
@@ -8,7 +9,7 @@ const saveAdmin = ()=>{
     admintime=Date.now();
     isadmin=true;
     saveAdmin();
-    const res = await fetch("http://localhost:7000/api/v2/user/admin",{
+    const res = await fetch(url+"/api/v2/user/admin",{
       method:"POST"
     });
     const resp = await res.json();
