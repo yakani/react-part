@@ -8,10 +8,10 @@ import {
  } from "react-router-dom";
 import { insertuser,userdata,save,Login,logout ,update,SingIn,SingUp,Resolveproblem } from './controlers/user.controlers';
 import { code, saveAdmin,AdminLogout } from './controlers/admin.controler';
-import { Updateitem,DeleteItem,AddItem } from './controlers/goal.controler';
+import { Updateitem,DeleteItem,AddItem,Get_goal } from './controlers/goal.controler';
 import {Insertpb , Collectedpb} from './controlers/problem.controler';
 import { InsertTransc,DeleteTrans } from './controlers/trans.controler';
-import { addconst,deleteconst } from './controlers/const.controler';
+import { addconst,deleteconst,Get_const } from './controlers/const.controler';
 import { DeleteDeliver,LoginDeliver,insertdeliver } from './controlers/deliver.controler';
 import Adminlogin from './pages/Adminlogin';
 import UpdateItempage from './pages/UpdateItempage';
@@ -62,10 +62,10 @@ const router= createBrowserRouter(createRoutesFromElements(
   <Route path="/update" element={<Uptadeuser userupdate={update} />}   loader={userdata} />
    <Route path="/" element={<Mainlayout ishomer={home} data={userdata} />}>
     <Route index element={<Homepage />} />
-    <Route path="/shop" element={<Products/>}/>
+    <Route path="/shop" element={<Products product={Get_goal}  />}/>
     <Route path="/logout" element={<Logout logoutuser={logout} />}   />
     <Route path="/product/:id" element={<Productpage addconsted={addconst} userid={user._id}/>} loader={Productloader}  />
-    <Route path="/cart" element={<Cartpage deleteproduct={deleteconst}  InsertTrans={InsertTransc}/>}   />
+    <Route path="/cart" element={<Cartpage deleteproduct={deleteconst}  InsertTrans={InsertTransc} constance={Get_const} />}   />
     <Route path="/contact" element={<Contactpage Resolveproblem={Insertpb} />}   />
     <Route path="*" element={<Notfoundpage/>}/>
   </Route>

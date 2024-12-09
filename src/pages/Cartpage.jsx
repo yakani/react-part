@@ -3,10 +3,10 @@ import Spinner from '../component/Spinner';
 import { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
-const Cartpage = ({deleteproduct,InsertTrans}) => {
+const Cartpage = ({deleteproduct,InsertTrans,constance }) => {
   const navigate = useNavigate();
   const [loading,setloading]=useState(true);
-  const [goals,setgoal] = useState();
+  const goals = constance()
   const [lon,setlon] = useState();
   const [lat, setlat] = useState();
   const deleteidem = (params)=>{
@@ -37,14 +37,7 @@ const Cartpage = ({deleteproduct,InsertTrans}) => {
   }
   useEffect(()=>{
     const getgoal = async()=>{
-try {
-
-  const resp = await fetch('http://localhost:7000/api/v2/const/const',
-    {credentials: "include"}
-  );
-  const data = await resp.json();
-  setgoal(data);
-  
+try { 
 } catch (error) {
   console.log(error);
 }finally{

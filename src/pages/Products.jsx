@@ -2,23 +2,9 @@ import React from 'react';
 import Spinner from '../component/Spinner';
 import { useState, useEffect } from 'react';
 import Bottomfeature from '../component/Bottomfeature';
-const Products = () => {
+const Products = (product) => {
     const [loading,setloading] = useState(true);
-    const [goals,setgoals] = useState([]);
-    useEffect(()=>{   const products = async ()=>{
-        try {
-            const resp = await fetch('http://localhost:7000/api/v2/goal');
-            const goal = await resp.json();
-            setgoals(goal);
-        } catch (error) {
-            console.log(error)
-        }finally{
-            setloading(false);
-        }
-    }
-    products();},[])
- 
-
+  const goals = product(); 
   return (
     <>
     <div className='inmodals'>

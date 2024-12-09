@@ -1,12 +1,21 @@
+const api = "https://backend-iota-three-50.vercel.app/api/v2";
 const deleteconst = async (params)=>{
-    const res = await fetch('http://localhost:7000/api/v2/const/'+params,{
+    const res = await fetch(api+'/const/'+params,{
       method:"DELETE",
       credentials: "include"
     });
     return;
   }
+  const Get_const = async ()=>{
+    const res = await fetch(api+ "/const/const",{
+      credentials:"include"
+    });
+    const resp = await res.json();
+    if(!res.ok)return resp.msg;
+    return resp;
+  }
     const addconst = async (params) => {
-      const res = await fetch('http://localhost:7000/api/v2/const', {
+      const res = await fetch(api+'/const', {
         method: 'POST',
         credentials: "include",
         headers:{
@@ -18,5 +27,6 @@ const deleteconst = async (params)=>{
     };
     export {
         addconst,
-        deleteconst
+        deleteconst,
+        Get_const
     }
