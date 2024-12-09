@@ -39,7 +39,7 @@ const Cartpage = ({deleteproduct,InsertTrans}) => {
     const getgoal = async()=>{
 try {
 
-  const resp = await fetch('http://localhost:7000/api/v2/const/const',
+  const resp = await fetch('https://backend-iota-three-50.vercel.app/api/v2/const/const',
     {credentials: "include"}
   );
   const data = await resp.json();
