@@ -5,11 +5,8 @@ import { useState,useEffect } from 'react';
 import Spinner from './Spinner';
 const Feature = ({ishome=false ,product}) => {
   const [loading, setloading] = useState(false);
-  const [goals,setgoals] = useState(product());
-  
-
-    
-    const cat=["V","S","W"];
+  const goals = product();
+  const cat=["V","S","W"];
   return (
     <>
      <section id="clothes"className="my-5">
