@@ -9,7 +9,7 @@ const Feature = ({ishome=false ,product}) => {
 useEffect(()=>{
 const loadproduct= async ()=>{
   try {
-const  data =await  product()
+const  data = product()
 setgoals(data);
 console.log(data);
   } catch (error) {
@@ -18,6 +18,7 @@ console.log(data);
   setloading(false);
   }
 }
+loadproduct();
 },[])
     const cat=["V","S","W"];
   return (
