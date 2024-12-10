@@ -36,7 +36,7 @@ function App() {
   let admintime = localStorage.getItem('timeoutadmin');
   let d = new Date();
   let user = userdata();
-  let goal = Get_goal();
+  let goal = ()=>Get_goal();
   let constance = Get_const();
 let home = ishome=='false' ? false : true;
  const checkadmin = ()=>{
