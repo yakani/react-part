@@ -69,6 +69,7 @@ const router= createBrowserRouter(createRoutesFromElements(
     <Route path="/contact" element={<Contactpage Resolveproblem={Insertpb} />}   />
     <Route path="*" element={<Notfoundpage/>}/>
   </Route>
+  <Route path="*" element={<Notfoundpage/>}/>
     </>
  
 ))
