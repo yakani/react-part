@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Bottomfeature from '../component/Bottomfeature';
 const Products = (product) => {
     const [loading,setloading] = useState(false);
-    const [goal,setgoals] = useState([]);
+    const [goals,setgoals] = useState([]);
     useEffect(()=>{
       const loadproduct= async ()=>{
         try {
