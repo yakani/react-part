@@ -5,7 +5,7 @@ import { useState,useEffect } from 'react';
 import Spinner from './Spinner';
 const Feature = ({ishome=false ,product}) => {
   const [loading, setloading] = useState(true);
-  const goals = product;
+  const goals = ()=>product;
 useEffect(()=>{
 try {
 
