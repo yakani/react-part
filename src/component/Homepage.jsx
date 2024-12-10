@@ -1,12 +1,12 @@
 import React from 'react'
 import Barhome from './Barhome';
 import Feature from './Feature'
-const Homepage = () => {
+const Homepage = (product) => {
   return (
     <>
     <div className='inmodals'>
     <Barhome/>
-    <Feature/>
+    <Feature product={product} />
     </div>
     
     </>

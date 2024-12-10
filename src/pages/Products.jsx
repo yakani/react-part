@@ -3,7 +3,7 @@ import Spinner from '../component/Spinner';
 import { useState, useEffect } from 'react';
 import Bottomfeature from '../component/Bottomfeature';
 const Products = (product) => {
-    const [loading,setloading] = useState(true);
+    const [loading,setloading] = useState(false);
   const goals = product(); 
   return (
     <>

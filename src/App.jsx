@@ -61,7 +61,7 @@ const router= createBrowserRouter(createRoutesFromElements(
   <Route path="/deliver/:id" element={<Deviler  Remove={DeleteTrans} />} loader={DataDeliver} />
   <Route path="/update" element={<Uptadeuser userupdate={update} />}   loader={userdata} />
    <Route path="/" element={<Mainlayout ishomer={home} data={userdata} />}>
-    <Route index element={<Homepage />} />
+    <Route index element={<Homepage product={Get_goal} />} />
     <Route path="/shop" element={<Products product={Get_goal}  />}/>
     <Route path="/logout" element={<Logout logoutuser={logout} />}   />
     <Route path="/product/:id" element={<Productpage addconsted={addconst} userid={user._id}/>} loader={Productloader}  />
