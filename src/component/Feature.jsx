@@ -5,11 +5,11 @@ import { useState,useEffect } from 'react';
 import Spinner from './Spinner';
 const Feature = ({ishome=false ,product}) => {
   const [loading, setloading] = useState(true);
-  const [goals,setgoals] = useState([]);
+  const goals = product;
 useEffect(()=>{
 try {
 
-  setgoals(product);
+  console.log(goals);
 } catch (error) {
   console.log(error)
 }finally{
