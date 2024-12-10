@@ -6,7 +6,7 @@ import {toast} from 'react-toastify';
 const Cartpage = ({deleteproduct,InsertTrans,constance }) => {
   const navigate = useNavigate();
   const [loading,setloading]=useState(false);
-  const goals = constance;
+  const [goals,setgoals] = useState([]);
   const [lon,setlon] = useState();
   const [lat, setlat] = useState();
   const deleteidem = (params)=>{
@@ -38,6 +38,10 @@ const Cartpage = ({deleteproduct,InsertTrans,constance }) => {
   useEffect(()=>{
     const getgoal = async()=>{
 try { 
+  const api = "https://backend-iota-three-50.vercel.app/api/v2";
+  const res = await fetch(api+"/const/const");
+  const resp = await res.json();
+setgoals(resp);
 } catch (error) {
   console.log(error);
 }finally{

@@ -4,7 +4,22 @@ import { useState, useEffect } from 'react';
 import Bottomfeature from '../component/Bottomfeature';
 const Products = (product) => {
     const [loading,setloading] = useState(false);
-  const goals = product; 
+    coonst [goal,setgoals] = useState([]);
+    useEffect(()=>{
+      const loadproduct= async ()=>{
+        try {
+          const api = "https://backend-iota-three-50.vercel.app/api/v2";
+          const res = await fetch(api+"/goal");
+          const resp = await res.json();
+       setgoals(resp);
+        } catch (error) {
+          console.log(error)
+        }finally{
+        setloading(false);
+        }
+      }
+      loadproduct();
+      },[])
   return (
     <>
     <div className='inmodals'>

@@ -3,15 +3,16 @@ import Topfeatures from './Topfeatures';
 import Bottomfeature from './Bottomfeature';
 import { useState,useEffect } from 'react';
 import Spinner from './Spinner';
-const Feature = ({ishome=false ,product}) => {
+const Feature = ({ishome=false,product}) => {
   const [loading, setloading] = useState(true);
   const [goals,setgoals] = useState([]);
 useEffect(()=>{
 const loadproduct= async ()=>{
   try {
-const  data = product()
-setgoals(data);
-console.log(data);
+    const api = "https://backend-iota-three-50.vercel.app/api/v2";
+    const res = await fetch(api+"/goal");
+    const resp = await res.json();
+ setgoals(resp);
   } catch (error) {
     console.log(error)
   }finally{
