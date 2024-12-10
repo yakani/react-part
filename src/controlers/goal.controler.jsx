@@ -13,7 +13,7 @@ const AddItem = async (params)=>{
   const Get_goal= async ()=>{
     const res = await fetch(api+ "/goal");
     const resp = await res.json();
-    if(!res.ok)return resp.msg;
+   // if(!res.ok)return resp.msg;
     return resp;
   }
 
