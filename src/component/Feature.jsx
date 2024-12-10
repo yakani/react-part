@@ -8,7 +8,7 @@ const Feature = ({ishome=false ,product}) => {
   const [goals,setgoals] = useState([]);
 useEffect(()=>{
 try {
-  const data = product();
+  const data = ()=>product();
   setgoals(data);
 } catch (error) {
   console.log(error)
