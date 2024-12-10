@@ -36,6 +36,8 @@ function App() {
   let admintime = localStorage.getItem('timeoutadmin');
   let d = new Date();
   let user = userdata();
+  let goal = Get_goal();
+  let constance = Get_const();
 let home = ishome=='false' ? false : true;
  const checkadmin = ()=>{
   if(admintime==0 || admintime<Date.now()){
@@ -60,12 +62,12 @@ const router= createBrowserRouter(createRoutesFromElements(
   <Route path="/deliver/login" element={<Loginpage insert={LoginDeliver}  type={'deliver'}/>}  />
   <Route path="/deliver/:id" element={<Deviler  Remove={DeleteTrans} />} loader={DataDeliver} />
   <Route path="/update" element={<Uptadeuser userupdate={update} />}   loader={userdata} />
-   <Route path="/" element={<Mainlayout ishomer={home} data={userdata} />}>
-    <Route index element={<Homepage product={Get_goal} />} />
-    <Route path="/shop" element={<Products product={Get_goal}  />}/>
+   <Route path="/" element={<Mainlayout ishomer={home} data={user} />}>
+    <Route index element={<Homepage product={goal} />} />
+    <Route path="/shop" element={<Products product={goal}  />}/>
     <Route path="/logout" element={<Logout logoutuser={logout} />}   />
     <Route path="/product/:id" element={<Productpage addconsted={addconst} userid={user._id}/>} loader={Productloader}  />
-    <Route path="/cart" element={<Cartpage deleteproduct={deleteconst}  InsertTrans={InsertTransc} constance={Get_const} />}   />
+    <Route path="/cart" element={<Cartpage deleteproduct={deleteconst}  InsertTrans={InsertTransc} constance={constance} />}   />
     <Route path="/contact" element={<Contactpage Resolveproblem={Insertpb} />}   />
     <Route path="*" element={<Notfoundpage/>}/>
   </Route>

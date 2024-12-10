@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
 const Cartpage = ({deleteproduct,InsertTrans,constance }) => {
   const navigate = useNavigate();
-  const [loading,setloading]=useState(true);
-  const goals = constance()
+  const [loading,setloading]=useState(false);
+  const goals = constance;
   const [lon,setlon] = useState();
   const [lat, setlat] = useState();
   const deleteidem = (params)=>{

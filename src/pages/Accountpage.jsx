@@ -8,7 +8,7 @@ const Accountpage = ( {userdata,ishome} ) => {
     useEffect(()=>{
         
             try {
-            const data = userdata();
+            const data = userdata;
             setuser(data)
             } catch (error) {
                 console.log(error)
