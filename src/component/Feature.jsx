@@ -4,9 +4,19 @@ import Bottomfeature from './Bottomfeature';
 import { useState,useEffect } from 'react';
 import Spinner from './Spinner';
 const Feature = ({ishome=false ,product}) => {
-  const [loading, setloading] = useState(false);
-  const goals = product();
-  const cat=["V","S","W"];
+  const [loading, setloading] = useState(true);
+  const [goals,setgoals] = useState([]);
+useEffect(()=>{
+try {
+  const data = product();
+  setgoals(data);
+} catch (error) {
+  console.log(error)
+}finally{
+setloading(false);
+}
+},[])
+    const cat=["V","S","W"];
   return (
     <>
      <section id="clothes"className="my-5">
