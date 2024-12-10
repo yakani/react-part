@@ -5,15 +5,18 @@ import { useState,useEffect } from 'react';
 import Spinner from './Spinner';
 const Feature = ({ishome=false ,product}) => {
   const [loading, setloading] = useState(true);
-  const goals = ()=>product;
+  const [goals,setgoals] = useState([]);
 useEffect(()=>{
-try {
-
-  console.log(goals);
-} catch (error) {
-  console.log(error)
-}finally{
-setloading(false);
+const loadproduct= async ()=>{
+  try {
+const  data =await  product()
+setgoals(data);
+console.log(data);
+  } catch (error) {
+    console.log(error)
+  }finally{
+  setloading(false);
+  }
 }
 },[])
     const cat=["V","S","W"];
