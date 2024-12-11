@@ -47,11 +47,11 @@ let ishome =localStorage.getItem('ishome');
   }
   const SingUp = async()=>{
     Setusertime(false);
-    window.location.href=url+'api/v2/auth/google/sign';
+    window.location.href=url+'/auth/google/sign';
   }
   const SingIn = async ()=>{
      Setusertime(false);
-    window.location.href=url+'api/v2/auth/google';
+    window.location.href=url+'/auth/google';
    
   }
   const logout = async()=>{
