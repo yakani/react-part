@@ -365,10 +365,10 @@ font-size: 20px;
  .goal{
   box-shadow: 10px 10px 5px grey;
  }
- @media screen and (max-width:800px) {
+ @media screen and (max-width:600px) {
  
   .next{
-    left: 500px;
+    left: 100px;
   }
  }
  
