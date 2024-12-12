@@ -368,7 +368,7 @@ font-size: 20px;
  @media screen and (max-width:600px) {
  
   .next{
-    left: 100px;
+    display: none;
   }
  }
  
