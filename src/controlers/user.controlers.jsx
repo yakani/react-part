@@ -38,6 +38,7 @@ let ishome =localStorage.getItem('ishome');
   const update = async (params) =>{
     const res  = await fetch(url+'/api/v2/user',{
       method:"PUT",
+      credentials: "include",
       headers:{
         'Content-Type':'application/json'
       },
@@ -71,17 +72,15 @@ let ishome =localStorage.getItem('ishome');
         withCredentials:true
       });
      Setusertime(false);
-      
+      return rest;
     } catch (error) {
       Setusertime(true);
     }
-  
-
-    return rest;
+    return [];
   }
 
   const insertuser = async (params)=>{
-   const res = await fetch('http://localhost:7000/api/v2/user',{
+   const res = await fetch(url+'/api/v2/user',{
     method:"POST",
     headers:{
       'Content-Type':'application/json'

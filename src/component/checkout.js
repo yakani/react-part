@@ -3,7 +3,7 @@ import {loadStripe} from '@stripe/stripe-js';
 const stripe = loadStripe('pk_test_51OFXhzG2TBEyRbDruXPeZg2trrlyvQyRgoVrmNwqo0dSGfS8k8Jb79QDPPEynPY3CdEwnClYpTqCPFm7KWnWGIV200lY1UUjqw');
 const id  = (window.location.href).split('/')[4];
 
-
+const url = "https://backend-iota-three-50.vercel.app/"
 const Checkout = () => {
 let elements;
 initialize();
@@ -17,14 +17,14 @@ document
 
 async function initialize() {
        try {
-        const res = await fetch("http://localhost:8000/const/"+ id);
+        const res = await fetch(url+"api/v2/const/"+ id);
         const rep = await res.json();
         const data = 
         {
           price : rep.product.price,
           number : rep.product.qty
         }
-        const response = await fetch("http://localhost:7000/create-payment-intent", {
+        const response = await fetch(url+"create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify( data ),
@@ -59,7 +59,7 @@ async function handleSubmit(e) {
     elements,
     confirmParams: {
       // Make sure to change this to your payment completion page
-      return_url:'/trans',
+      return_url:'https://react-part-sigma.vercel.app?transc=ok&&const='+id,
     },
   });
 
