@@ -68,11 +68,12 @@ let ishome =localStorage.getItem('ishome');
   }
   const userdata= async ()=>{
     try {
-      const rest = await axios.get(url+'/api/v2/user/profile',{
-        withCredentials:true
+      const rest = await fetch(url+'/api/v2/user/profile',{
+        credentials: "include",
       });
+      const resp = await rest.json();
      Setusertime(false);
-      return rest;
+      return resp;
     } catch (error) {
       Setusertime(true);
     }

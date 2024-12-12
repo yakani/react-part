@@ -6,15 +6,20 @@ const Accountpage = ( {userdata,ishome} ) => {
     const [user,setuser] = useState();
     const [loading,setloading] = useState(true);
     useEffect(()=>{
-        
+        const loaddata = async ()=>{
             try {
-            const data = userdata;
+            const res = await fetch("https://backend-iota-three-50.vercel.app/api/v2/user/profile",{
+                credentials: "include",
+            });
+            const data = await res.json();
             setuser(data)
             } catch (error) {
                 console.log(error)
             }finally{
                 setloading(false)
             }
+        }
+            loaddata();
             
          
     },[])
