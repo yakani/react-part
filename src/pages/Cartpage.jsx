@@ -39,7 +39,9 @@ const Cartpage = ({deleteproduct,InsertTrans,constance }) => {
     const getgoal = async()=>{
 try { 
   const api = "https://backend-iota-three-50.vercel.app/api/v2";
-  const res = await fetch(api+"/const/const");
+  const res = await fetch(api+"/const/const",{
+    credentials: "include",
+  });
   const resp = await res.json();
 setgoals(resp);
 } catch (error) {
