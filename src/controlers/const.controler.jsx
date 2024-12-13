@@ -23,6 +23,7 @@ const deleteconst = async (params)=>{
         },
         body:JSON.stringify(params)
       });
+      if(!res.ok){console.log(error)}
       return;
     };
     export {

@@ -28,8 +28,8 @@ const Productpage = ({addconsted ,userid}) => {
             user:userid,
             product:{
                 picture:imager,
+                 size,
                 qty:quatity,
-                size,
                 name:goal.name,
                 price:goal.price
             }
