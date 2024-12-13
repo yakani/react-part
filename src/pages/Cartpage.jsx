@@ -58,7 +58,7 @@ setgoals(resp);
   return (
     <>
 <section  class="container sproduct my-5 py-5" id="all">
-  {loading ? <Spinner loading={loading}/>:((goals.length!==0) ? goals.map(goal=>
+  {loading ? <Spinner loading={loading}/>:((goals.length!=0) ? goals.map(goal=>
 <div className='row mt-5' key={goal._id}>
   <div className='col-lg-5 col-md-12 col-12'><img src={goal.product.picture} alt="" className="ims-fluid w-100 pb-1 unique"/></div>
   <div className="col-lg-5 col-md-12 col-12">
