@@ -11,7 +11,7 @@ const AdimPage = ({Item_remove,Delete_deliver,admin,Logout}) => {
     const [delivers,setdeliver] = useState([]);
     const [goals,setgoals] = useState([]);
     const [loading,setloading] = useState(true);
-    const url = "https://backend-iota-three-50.vercel.ap";
+    const url = "https://backend-iota-three-50.vercel.app";
     const LogoutAdmin = ()=>{
       Logout();
        navigate('/login');
