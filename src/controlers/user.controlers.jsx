@@ -73,6 +73,7 @@ let ishome =localStorage.getItem('ishome');
       });
       const resp = await rest.json();
      Setusertime(false);
+     if(!rest.ok){Setusertime(true);}
       return resp;
     } catch (error) {
       Setusertime(true);
