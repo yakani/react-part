@@ -370,5 +370,8 @@ font-size: 20px;
   .next{
     display: none;
   }
+  .modals{
+    width:300px;
+  }
  }
  
