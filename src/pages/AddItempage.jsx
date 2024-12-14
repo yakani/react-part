@@ -23,7 +23,17 @@ const AddItempage = ({Additem,admin}) => {
             price,
             img
         };
-        Additem(data);
+        const AddItem = async (params)=>{
+            const res = await fetch('https://backend-iota-three-50.vercel.app/api/v2/goal',{
+              method:"POST",
+              headers:{
+                "Content-Type":"application/json"
+              },
+              body:JSON.stringify(params)
+            });
+  
+          }
+        AddItem(data);
         toast.success('insert');
         navigate('/admin');
     }
