@@ -31,11 +31,13 @@ const AddItempage = ({Additem,admin}) => {
               },
               body:JSON.stringify(params)
             });
+            if(res.ok){
+        toast.success('insert');
+        navigate('/admin');}
   
           }
         AddItem(data);
-        toast.success('insert');
-        navigate('/admin');
+       
     }
 
   return (
