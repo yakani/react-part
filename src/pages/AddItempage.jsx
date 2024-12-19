@@ -33,7 +33,8 @@ const AddItempage = ({Additem,admin}) => {
             });
             if(res.ok){
         toast.success('insert');
-        navigate('/admin');}
+        console.log(params);
+         }
   
           }
         AddItem(data);
