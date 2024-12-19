@@ -7,6 +7,7 @@ const AddItem = async (params)=>{
       },
       body:JSON.stringify(params)
     });
+    if(res.ok){console.log(params)}
     return ;
   }
 
