@@ -103,7 +103,7 @@ const UpdateItempage = ({Updateitem,admin}) => {
 			 <input type="text" name="cat" placeholder="enter the category" id="i-cat" value={category} onChange={(e)=>setcategory(e.target.value)} required/>
 			 
 			</div>
-			<div> <input type="submit" name="submit" onClick={()=>Submititem}  className="a"/> </div>
+			<div> <input type="submit" name="submit" onClick={Submititem}  className="a"/> </div>
 			
 </form>
     </>
