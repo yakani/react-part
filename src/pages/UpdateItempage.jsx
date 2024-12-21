@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import { useEffect } from 'react';
 const UpdateItempage = ({Updateitem,admin}) => {
     const navigate = useNavigate();
     const { id } = useParams();
@@ -26,9 +27,21 @@ const UpdateItempage = ({Updateitem,admin}) => {
             price,
             img
         };
-        Updateitem(id,data);
-        toast.success('insert');
-        navigate('/admin');
+        const api =" https://backend-iota-three-50.vercel.app/api/v2";
+        const IdemUP = async (id,params)=>{
+          const res = await fetch(api+'/goal/'+id, {
+            method: 'PUT',
+            headers:{
+              'Content-Type':'application/json'
+            },
+            body:JSON.stringify(params)
+          });
+          if(res.ok){toast.success('insert');
+        navigate('/admin');}
+        }
+        IdemUP(id,data);
+        
+        
     }
 
   return (

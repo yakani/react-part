@@ -30,7 +30,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
     }
     e.preventDefault();
     if(!name || !country || !Address || !password1)return  toast.error('filled all the box')
-    if(tel.length!=9)return toast.error('invalid phone number');
+    if(tel.length<13)return toast.error('invalid phone number');
     if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))return toast.error('invalid email');
     if(password1!=password2)return toast.error('password are not identical');
     const data = {
@@ -41,11 +41,25 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
       country,
       Address
     };
+      const api =" https://backend-iota-three-50.vercel.app/api/v2";
+            const IdemUP = async (params)=>{
+        
+              const res = await fetch(api+'/'+type, {
+                 method: 'POST',
+                credentials: "include",
+                headers:{
+                  'Content-Type':'application/json'
+                },
+                body:JSON.stringify(params)
+              });
+        
+            }
+           
       try {
     
-        insert(data);
+          IdemUP(data);
       } catch (error) {
-        toast.error(error);
+        toast.error(error.msg);
       }
       toast.success('welcome to nashmood'+name);
       navigate(type=='user' ? '/shop' : '/admin');
@@ -72,7 +86,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
                 className="block text-gray-700 font-bold mb-2"
                 >Tel:</label
               >
-            <input type="tel"  name="tel" placeholder="Enter your telphone numbere here! please " value={tel} onChange={(e)=>{settel(e.target.value)}} id="u-tel" required />
+            <input type="tel"  name="tel" placeholder=" 000237 657 0789 95  " value={tel} onChange={(e)=>{settel(e.target.value)}} id="u-tel" required />
          </div>  
  
 	

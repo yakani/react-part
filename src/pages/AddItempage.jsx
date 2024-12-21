@@ -37,8 +37,12 @@ const AddItempage = ({Additem,admin}) => {
          }
   
           }
+          
+       try {
         AddItem(data);
-       
+       } catch (error) {
+        toast.error(error.msg);
+       }
     }
 
   return (

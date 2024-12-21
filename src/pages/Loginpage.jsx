@@ -27,13 +27,25 @@ const Loginpage = ({insert,type,Google}) => {
       email,
       password
     };
+    const api =" https://backend-iota-three-50.vercel.app/api/v2";
+    const url = (type == "user") ? "/user/auth": "/deliver/login";
+    const IdemUP = async (params)=>{
+      const res = await fetch(api+url, {
+         method: 'POST',
+        credentials: "include",
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify(params)
+      });
+
+    }
     try {
-      const  res = await insert(data);
-      console.log(res);
+      IdemUP(data);
       toast.success('good');
       navigate(type=='user' ? '/shop' : '/deliver/'+res);
     } catch (error) {
-      toast.error(error);
+      toast.error(error.msg);
     }
     
   };
