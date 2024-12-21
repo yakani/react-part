@@ -34,7 +34,7 @@ const Productpage = ({addconsted ,userid}) => {
                 price:goal.price
             }
         };
-        coconsole.log(data);
+        console.log(data);
 
           const api =" https://backend-iota-three-50.vercel.app/api/v2";
                 const IdemUP = async (params)=>{
