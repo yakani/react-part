@@ -18,7 +18,7 @@ document
 async function initialize() {
        try {
         const res = await fetch(url+"api/v2/const/"+ id,{
-          credentials:"includes"
+          credentials:"include"
         });
         const rep = await res.json();
         const data = 
