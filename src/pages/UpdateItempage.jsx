@@ -90,7 +90,7 @@ const UpdateItempage = ({Updateitem,admin}) => {
                        names[index]=   {picture:"/photos/"+imges[index].name} ;
                     }
                 setimg(names);
-             }} required/>
+             }} />
 			 
 			</div>
            
