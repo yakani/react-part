@@ -10,7 +10,6 @@ const Checkpage = () => {
     <meta name="description" content="A demo of a payment on Stripe" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/check.css" />
-    <script src='../component/checkout.js'/>
     <script src="https://js.stripe.com/v3/"></script>
   
     </Helmet>
