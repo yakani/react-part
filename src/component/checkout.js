@@ -4,7 +4,7 @@ const stripe = loadStripe('pk_test_51OFXhzG2TBEyRbDruXPeZg2trrlyvQyRgoVrmNwqo0dS
 const id  = (window.location.href).split('/')[4];
 
 const url = "https://backend-iota-three-50.vercel.app/"
-const Checkout = () => {
+
 let elements;
 initialize();
 checkStatus();
@@ -136,9 +136,8 @@ function setLoading(isLoading) {
     document.querySelector("#button-text").classList.remove("hidden");
   }
 }
-  return ;
+  
    
   
-}
 
-export default Checkout
+
