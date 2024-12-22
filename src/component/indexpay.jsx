@@ -13,8 +13,8 @@ function Payment() {
   const api = "https://backend-iota-three-50.vercel.app";
   useEffect(() => {
     fetch(api+"/create-payment-intent").then(async (r) => {
-      const { publickey } = await r.json();
-      setStripePromise(loadStripe(publickey));
+      const resp = await r.json();
+      setStripePromise(loadStripe(resp.publickey));
     });
   }, []);
   useEffect(() => {
@@ -32,8 +32,8 @@ function Payment() {
       credentials:"include",
       body: JSON.stringify(data),
     }).then(async (result) => {
-      const { clientSecret } = await result.json();
-      setClientSecret(clientSecret);
+      const resp = await result.json();
+      setClientSecret(resp.clientSecret);
     });
   }, []);
 
