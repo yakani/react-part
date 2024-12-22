@@ -32,7 +32,7 @@ function Payment() {
       credentials:"include",
       body: JSON.stringify(data),
     }).then(async (result) => {
-      var { clientSecret } = await result.json();
+      const { clientSecret } = await result.json();
       setClientSecret(clientSecret);
     });
   }, []);
