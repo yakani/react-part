@@ -10,7 +10,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
   const [value,setvalue] = useState('');
   const [name,setname] =useState();
   const [email,setemail] =useState('');
-  const [tel,settel] =useState(0);
+  const [tel,settel] =useState();
   const [country,setcountry] =useState();
   const [Address,setadress] =useState();
   const [password1,setpassword1] =useState('');
@@ -86,7 +86,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
                 className="block text-gray-700 font-bold mb-2"
                 >Tel:</label
               >
-            <input type="tel"  name="tel" placeholder=" 000237 657 0789 95  " value={tel} onChange={(e)=>{settel(e.target.value)}} id="u-tel" required />
+            <input type="tel"  name="tel" placeholder=" 00237 657 0789 95  " value={tel} onChange={(e)=>{settel(e.target.value)}} id="u-tel" required />
          </div>  
  
 	

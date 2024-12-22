@@ -19,8 +19,15 @@ const Contactpage = (Resolveproblem) => {
           problem:description,
         
       }
-      Resolveproblem(data);
-      toast.success("problem send");
+      const api = "https://backend-iota-three-50.vercel.app";
+      fetch(api+"/api/v2/user/problem",{
+        method: "POST",
+        credentials:"include",
+        body: JSON.stringify(data),
+       }).then(async (r) => {
+        toast.success("problem send");
+       });
+      
     }
 
   return <> 

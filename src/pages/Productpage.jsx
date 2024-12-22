@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import Spinner from '../component/Spinner';
 import { toast } from 'react-toastify';
-const Productpage = ({addconsted ,userid}) => {
+const Productpage = ({}) => {
     const { id } = useParams();
     const  goal = useLoaderData();
     const [imager,setimage] = useState(goal.img[0].picture);

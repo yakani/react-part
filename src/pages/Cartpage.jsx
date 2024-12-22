@@ -3,12 +3,12 @@ import Spinner from '../component/Spinner';
 import { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
-const Cartpage = ({deleteproduct,InsertTrans,constance }) => {
+const Cartpage = ({deleteproduct }) => {
   const navigate = useNavigate();
   const [loading,setloading]=useState(false);
   const [goals,setgoals] = useState([]);
-  const [lon,setlon] = useState();
-  const [lat, setlat] = useState();
+  const [lon,setlon] = useState(false);
+  
   const deleteidem = (params)=>{
     const confirm = window.confirm('are you sure to remove');
     if(!confirm)return;
@@ -18,23 +18,22 @@ const Cartpage = ({deleteproduct,InsertTrans,constance }) => {
   };
 
   const BuyItem = async (params,id)=>{
+    if(lon){navigate('/update');}else{ navigate('/payment/'+id);}
   
-     navigate('/payment/'+id);
-    const data = {
-      user:{
-        name:'yakani',
-        telephone:657078995,
-        country:'cameroon',
-      },
-      product:params,
-      lon,
-      lat,
-    };
-    InsertTrans(data);
-    
-   
-
   }
+  const api = "https://backend-iota-three-50.vercel.app";
+   useEffect(() => {
+     fetch(api+"/api/v2/user/profile",{
+      credentials:"include",
+     }).then(async (r) => {
+       const resp = await r.json();
+       if(resp.country == "country" || resp.country== "")
+       {
+          setlon(true);
+       }else{setlon(false);}
+      
+     });
+   }, []);
   useEffect(()=>{
     const getgoal = async()=>{
 try { 
@@ -47,16 +46,13 @@ setgoals(resp);
 } catch (error) {
   console.log(error);
 }finally{
-  navigator.geolocation.getCurrentPosition((position)=>{
-    setlon(position.coords.longitude);
-    setlat(position.coords.latitude);
-    console.log(position.coords);
-  });
+ 
   setloading(false);
 }
     }
     getgoal();
-  },[])
+  },[]);
+
   return (
     <>
 <section  class="container sproduct my-5 py-5" id="all">

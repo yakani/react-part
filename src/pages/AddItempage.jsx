@@ -40,6 +40,7 @@ const AddItempage = ({Additem,admin}) => {
           
        try {
         AddItem(data);
+        navigate('/admin');
        } catch (error) {
         toast.error(error.msg);
        }

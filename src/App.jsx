@@ -13,6 +13,7 @@ import {Insertpb , Collectedpb} from './controlers/problem.controler';
 import { InsertTransc,DeleteTrans } from './controlers/trans.controler';
 import { addconst,deleteconst,Get_const } from './controlers/const.controler';
 import { DeleteDeliver,LoginDeliver,insertdeliver } from './controlers/deliver.controler';
+import Payment from './component/indexpay';
 import Adminlogin from './pages/Adminlogin';
 import UpdateItempage from './pages/UpdateItempage';
 import Mainlayout from './mainlayout/Mainlayout';
@@ -24,12 +25,12 @@ import Homepage from './component/Homepage';
 import Products from './pages/Products';
 import Notfoundpage from './pages/Notfoundpage';
 import Uptadeuser from './pages/Uptadeuser';
-import Checkpage from './pages/Checkpage';
 import Logout from './pages/Logout';
 import AdimPage from './pages/AdimPage';
 import Deviler,{DataDeliver} from './pages/Deviler';
 import Contactpage from './pages/Contactpage';
 import AddItempage from './pages/AddItempage';
+import Compliationpage from './pages/Compliationpage';
 function App() {
   let ishome =localStorage.getItem('ishome');
   let isadmin = localStorage.getItem('isadmin');
@@ -53,7 +54,7 @@ const router= createBrowserRouter(createRoutesFromElements(
    <Route path="/item" element={<AddItempage Additem={AddItem} admin={isadmin == 'false' ? false : true} />}   />
    <Route path="/admin/login" element={<Adminlogin Getcode={code} />}   />
    <Route path="/login" element={<Loginpage insert={Login} type={'user'}  Google={SingIn} />}   />
-   <Route path="/payment/:id" element={<Checkpage />}   />
+   <Route path="/payment/:id" element={<Payment />}   />
   <Route path="/register" element={<Registerpage insert={insertuser} type={'user'} Google={SingUp} />}  />
   <Route path="/deliver/register" element={<Registerpage insert={insertdeliver} type={'deliver'} admin={isadmin=='false' ? false : true} />}  />
   <Route path="/admin" element={<AdimPage Item_remove={DeleteItem} Delete_deliver={DeleteDeliver} admin={isadmin=='false' ? false : true} Logout={AdminLogout} />} />
@@ -64,9 +65,10 @@ const router= createBrowserRouter(createRoutesFromElements(
     <Route index element={<Homepage product={Get_goal} />} />
     <Route path="/shop" element={<Products product={Get_goal}  />}/>
     <Route path="/logout" element={<Logout logoutuser={logout} />}   />
-    <Route path="/product/:id" element={<Productpage addconsted={addconst} userid={user._id}/>} loader={Productloader}  />
-    <Route path="/cart" element={<Cartpage deleteproduct={deleteconst}  InsertTrans={InsertTransc} constance={Get_const} />}   />
+    <Route path="/product/:id" element={<Productpage />} loader={Productloader}  />
+    <Route path="/cart" element={<Cartpage deleteproduct={deleteconst}   />}   />
     <Route path="/contact" element={<Contactpage Resolveproblem={Insertpb} />}   />
+    <Route path="/compilation" element={<Compliationpage  />}   />
     <Route path="*" element={<Notfoundpage/>}/>
   </Route>
   <Route path="*" element={<Notfoundpage/>}/>
