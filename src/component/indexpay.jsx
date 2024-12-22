@@ -18,7 +18,7 @@ function Payment() {
     });
   }, []);
   useEffect(() => {
-    fetch(api+"/api/const/unic/"+id,{
+    fetch(api+"/api/v2/const/unic/"+id,{
       credentials:"include",
     }).then(async (r) => {
       const resp = await r.json();
