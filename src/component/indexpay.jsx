@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 function Payment() {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
-  const [data,setdata] = useState({});
+  const [data,setdata] = useState();
   const { id } = useParams();
   const api = "https://backend-iota-three-50.vercel.app";
   useEffect(() => {
