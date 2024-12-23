@@ -22,7 +22,7 @@ export default function CheckoutForm() {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {        
-        return_url: "/compilation/"+url,
+        return_url: "https://react-part-sigma.vercel.app/compilation/"+url,
       },
     });
 
