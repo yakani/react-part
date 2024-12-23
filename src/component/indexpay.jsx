@@ -23,10 +23,20 @@ function Payment() {
     }).then(async (r) => {
       const resp = await r.json();
       const cool = { price : resp.product.price, number : resp.product.qty };
+        fetch(api+"/create-payment-intent", {
+      method: "POST",
+      credentials:"include",
+      body: JSON.stringify(cool),
+    }).then(async (result) => {
+      const resp = await result.json();
+      console.log(resp);
+      setClientSecret(resp.clientSecret);
+    });
       setdata(cool);
     });
   }, []);
-  useEffect(() => {
+  
+ /* useEffect(() => {
     console.log(data);
     fetch(api+"/create-payment-intent", {
       method: "POST",
@@ -37,7 +47,7 @@ function Payment() {
       console.log(resp);
       setClientSecret(resp.clientSecret);
     });
-  }, []);
+  }, []);*/
 
   return (
     <>
