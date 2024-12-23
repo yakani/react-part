@@ -23,9 +23,12 @@ function Payment() {
     }).then(async (r) => {
       const resp = await r.json();
       const cool = { price : resp.product.price, number : resp.product.qty };
-        fetch(api+"/create-payment-intent", {
+      fetch(api+"/create-payment-intent", {
       method: "POST",
       credentials:"include",
+      headers:{
+              'Content-Type':'application/json'
+            },
       body: JSON.stringify(cool),
     }).then(async (result) => {
       const resp = await result.json();
