@@ -14,6 +14,7 @@ function Payment() {
   useEffect(() => {
     fetch(api+"/create-payment-intent").then(async (r) => {
       const resp = await r.json();
+      console.log(resp.publickey);
       setStripePromise(loadStripe(resp.publickey));
     });
   }, []);
@@ -33,6 +34,7 @@ function Payment() {
       body: JSON.stringify(data),
     }).then(async (result) => {
       const resp = await result.json();
+      console.log(resp);
       setClientSecret(resp.clientSecret);
     });
   }, []);
