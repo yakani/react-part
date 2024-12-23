@@ -14,7 +14,6 @@ function Payment() {
   useEffect(() => {
     fetch(api+"/create-payment-intent").then(async (r) => {
       const resp = await r.json();
-      console.log(resp.publickey);
       setStripePromise(loadStripe(resp.publickey));
     });
   }, []);
@@ -23,11 +22,12 @@ function Payment() {
       credentials:"include",
     }).then(async (r) => {
       const resp = await r.json();
-      const cool = { number : resp.product.qty , price : resp.product.price};
+      const cool = { price : resp.product.price, number : resp.product.qty };
       setdata(cool);
     });
   }, []);
   useEffect(() => {
+    console.log(data);
     fetch(api+"/create-payment-intent", {
       method: "POST",
       credentials:"include",
