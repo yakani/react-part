@@ -6,12 +6,12 @@ import {
   createRoutesFromElements,
 
  } from "react-router-dom";
-import { insertuser,userdata,save,Login,logout ,update,SingIn,SingUp,Resolveproblem } from './controlers/user.controlers';
+import { insertuser,userdata,Login,logout ,update,SingIn,SingUp } from './controlers/user.controlers';
 import { code, saveAdmin,AdminLogout } from './controlers/admin.controler';
 import { Updateitem,DeleteItem,AddItem,Get_goal } from './controlers/goal.controler';
-import {Insertpb , Collectedpb} from './controlers/problem.controler';
-import { InsertTransc,DeleteTrans } from './controlers/trans.controler';
-import { addconst,deleteconst,Get_const } from './controlers/const.controler';
+import {Insertpb } from './controlers/problem.controler';
+import { DeleteTrans } from './controlers/trans.controler';
+import { deleteconst} from './controlers/const.controler';
 import { DeleteDeliver,LoginDeliver,insertdeliver } from './controlers/deliver.controler';
 import Payment from './component/indexpay';
 import Adminlogin from './pages/Adminlogin';
@@ -68,7 +68,7 @@ const router= createBrowserRouter(createRoutesFromElements(
     <Route path="/product/:id" element={<Productpage />} loader={Productloader}  />
     <Route path="/cart" element={<Cartpage deleteproduct={deleteconst}   />}   />
     <Route path="/contact" element={<Contactpage Resolveproblem={Insertpb} />}   />
-    <Route path="/compilation" element={<Compliationpage  />}   />
+    <Route path="/compilation/:id" element={<Compliationpage  />}   />
     <Route path="*" element={<Notfoundpage/>}/>
   </Route>
   <Route path="*" element={<Notfoundpage/>}/>

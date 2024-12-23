@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 function Payment() {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
-  const [data,setdata] = useState();
   const { id } = useParams();
   const api = "https://backend-iota-three-50.vercel.app";
   useEffect(() => {
@@ -32,25 +31,13 @@ function Payment() {
       body: JSON.stringify(cool),
     }).then(async (result) => {
       const resp = await result.json();
-      console.log(resp);
       setClientSecret(resp.clientSecret);
     });
-      setdata(cool);
+     
     });
   }, []);
   
- /* useEffect(() => {
-    console.log(data);
-    fetch(api+"/create-payment-intent", {
-      method: "POST",
-      credentials:"include",
-      body: JSON.stringify(data),
-    }).then(async (result) => {
-      const resp = await result.json();
-      console.log(resp);
-      setClientSecret(resp.clientSecret);
-    });
-  }, []);*/
+
 
   return (
     <>
