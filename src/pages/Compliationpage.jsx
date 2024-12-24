@@ -1,12 +1,12 @@
 import React, { useState,useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Spinner from '../component/Spinner';
+import { toast } from 'react-toastify';
 const Compliationpage = () => {
  const { id } = useParams();
- const [product,setproduct] =useState({});
 const [loading,setloading ]= useState(true);
-const [next,setnext ]= useState(false);
- 
+const navigate = useNavigate();
+
  
 const api = "https://backend-iota-three-50.vercel.app";
    useEffect(() => {
@@ -14,19 +14,22 @@ const api = "https://backend-iota-three-50.vercel.app";
         credentials:"include"
      }).then(async (r) => {
        const resp = await r.json();
-       setproduct( {product:resp.product, lat:resp.lat, lon:resp.lon} );
-     });
-   }, []);
-     useEffect(() => {
+       const data = {product:resp.product} ;
        fetch(api+"/api/v2/trans",{
         method: "POST",
         credentials:"include",
-        body: JSON.stringify(product),
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(data),
        }).then(async (r) => {
         setloading(false);
+        toast.success("your order have been place");
+        navigate('/shop');
        });
-     }, []);
-
+     });
+   }, []);
+   
   return (
     <div>
       {loading ? <Spinner loading={loading}/> : <h1>Order place successfully</h1>}
