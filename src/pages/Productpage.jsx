@@ -81,7 +81,8 @@ const Productpage = ({}) => {
             <button className="buy-btn" onClick={()=>setquantity(( quatity==goal.qty) ? 0 :quatity+1)}>+</button>
             <button className="buy-btn" onClick={()=>setquantity(quatity==0  ? 0 : quatity-1)}>-</button>
             </div>
-            <button className="buy-btn" onClick={()=>introduce()}>ADD TO  CART</button>
+            {goal.qty == 0 ? <h2>Out of stock</h2>:<button className="buy-btn" onClick={()=>introduce()}>ADD TO  CART</button> }
+            
         </div>
         </div>
     </section>
