@@ -4,9 +4,7 @@ import { useStripe, useElements } from "@stripe/react-stripe-js";
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
-  const url = window.location.href.split('/')[2];
-  console.log(url);
-  console.log(window.location.href);
+  const url = window.location.href.split('/')[4];
   const [message, setMessage] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
