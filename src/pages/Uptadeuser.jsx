@@ -20,18 +20,16 @@ const Uptadeuser = ({userupdate}) => {
     const [tel,settel] = useState(user.telephone);
     const [country,setcountry] = useState(user.country);
     const [address,setadress] = useState(user.Address);
-    const [password1, setpassword1] = useState(user.password);
-    const [password2, setpassword2] = useState(user.password);
+   
     const updater = (e)=>{
         e.preventDefault();
         if(tel.length<13)return toast.error('invalid phone number');
         
         if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))return toast.error('invalid email');
-        if(password1!=password2)return toast.error('password are not identical');
+        
         const data = {
             name,
             email,
-            password:password1,
             telephone:tel,
             country,
             Address:address
@@ -114,23 +112,7 @@ const Uptadeuser = ({userupdate}) => {
 <input type="text"  name="adress" placeholder="example: douala ,kotto bloc G ,Rue007 " id="u-address" value={address} onChange={(e)=>setadress(e.target.value)} required />
 </div>  
 
-    <div>
-    <label
-                htmlFor="pwd1"
-                className="block text-gray-700 font-bold mb-2"
-                >Paswword:</label
-              >
-     <input type="password" name="pwd1" placeholder="enter  password" id="u-pwd1" value={password1} onChange={(e)=>setpassword1(e.target.value)}  required />
-     
-    </div>
-    <div>
-    <label
-                htmlFor="pwd2"
-                className="block text-gray-700 font-bold mb-2"
-                >Confirm Password:</label
-              >
-        <input type="password"  name="pwd2" placeholder="confirm your password  " id="u-pwd2" value={password2} onChange={(e)=>setpassword2(e.target.value)} required />
-     </div>  
+ 
 
     <div> <button classNameName="btn-user"  style={{fontSize:"15px", backgroundColor:"#6b11e0"}} onClick={updater} >send</button> </div>
     

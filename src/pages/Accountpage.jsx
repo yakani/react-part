@@ -49,7 +49,6 @@ const Accountpage = ( {userdata,ishome} ) => {
                 <h2>Actual data</h2>
                     <h3 className="py-4" id="name">  {'NAME:'+ user.name} </h3>
                     <h3 className="py-4" id="email" >{'Email:'+ user.email}</h3>
-                    <h3 className="py-4" id="pwd">{user.password=="password" ? "password:password":""}</h3>
             </div> 
             <div className="col-lg-6 col-md-12 col-12 m-2 ">
                 
