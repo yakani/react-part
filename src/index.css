@@ -365,6 +365,21 @@ font-size: 20px;
  .goal{
   box-shadow: 10px 10px 5px grey;
  }
+ .gridbox, .orders{
+display: flex;
+grid-template-columns: repeat(3,1fr);
+box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+ }
+ .imgorder{
+  width: 200px;
+  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ .cardorder{
+  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+ }
  @media screen and (max-width:600px) {
  
   .next{

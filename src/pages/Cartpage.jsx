@@ -8,6 +8,7 @@ const Cartpage = ({deleteproduct }) => {
   const [loading,setloading]=useState(false);
   const [goals,setgoals] = useState([]);
   const [lon,setlon] = useState(false);
+  const [orders,setorders]= useState([]);
   
   const deleteidem = (params)=>{
     const confirm = window.confirm('are you sure to remove');
@@ -47,11 +48,20 @@ setgoals(resp);
   console.log(error);
 }finally{
  
-  setloading(false);
+
 }
     }
     getgoal();
   },[]);
+  useEffect(() => {
+    fetch(api+"/api/v2/trans/user",{
+     credentials:"include",
+    }).then(async (r) => {
+      const resp = await r.json();
+        setorders(resp);
+        setloading(false);
+    });
+  }, []);
 
   return (
     <>
@@ -68,6 +78,13 @@ setgoals(resp);
     <button className="buy-btn" onClick={()=>deleteidem(goal._id)}>Remove</button>
   </div>
 </div>):<div><h1>Cart is empty</h1></div>)}
+{loading ? <Spinner loading={loading}/> : <div className='orders'>{orders.length == 0 ? <h1>no orders</h1>:orders.map(order =>
+  <div className="cartorder" key={order._id}>
+    <img src={order.product.picture} alt="" className="imgorder" />
+    <h2>{"size "+ order.product.size}</h2>
+    <h2>{"Price "+ order.product.price * order.product.qty }</h2>
+  </div>
+)} </div>}
 
 </section>
     </>

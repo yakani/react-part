@@ -56,8 +56,8 @@ const Productpage = ({userid}) => {
   return (
     <>
     <section className="container sproduct my-5 py-5 inmodals" id="all" >
-        <div className=" row mt-5 ">
-        <div className="col-lg-5 col-md-12 col-12">
+        <div className=" gridbox mt-5 ">
+        <div className="row mt-5">
             {goal.img.map(image=> (image.picture!=imager) ? <img src= {image.picture}  key={image._id} alt="" className='ims-fluid  pb-1 sub' style={{height:"100px"}} onClick={()=>exchange(image.picture)} />:<></>)}
             
         </div>
