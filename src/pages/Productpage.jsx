@@ -57,7 +57,7 @@ const Productpage = ({userid}) => {
     <>
     <section className="container sproduct my-5 py-5 inmodals" id="all" >
         <div className=" gridbox mt-5 ">
-        <div className="row mt-5">
+        <div className="gridimg mt-5">
             {goal.img.map(image=> (image.picture!=imager) ? <img src= {image.picture}  key={image._id} alt="" className='ims-fluid  pb-1 sub' style={{height:"100px"}} onClick={()=>exchange(image.picture)} />:<></>)}
             
         </div>

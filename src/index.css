@@ -375,6 +375,11 @@ border-bottom-right-radius: 20px;
 border-bottom-left-radius: 20px;
 width: 100%;
  }
+ .gridimg{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  row-gap: 10px;
+ }
  .imgorder{
   width: 200px;
   box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
