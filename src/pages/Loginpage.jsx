@@ -54,6 +54,9 @@ const Loginpage = ({insert,type,Google}) => {
     <Helmet>
       <link rel='stylesheet' href='/login.css'/>
     </Helmet>
+    <video autoplay loop muted className='videofixed'>
+      <source srcset="/photos/nashmood.mp4" type="video/mp4" />
+    </video>
     <ToastContainer/>
     	<form  className="container login" >
 

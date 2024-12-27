@@ -85,6 +85,12 @@ width: 600px;
 placeholder{
 	font-size: 15px;
 }
+.videofixed{
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	position: fixed;
+}
 .a:hover{
 	cursor: pointer;
 	background-color: blue;

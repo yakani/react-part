@@ -81,6 +81,12 @@ placeholder{
 	padding: 10px;
 	text-transform: uppercase;
 }
+.videofixed{
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	position: fixed;
+}
 .btn{
 	width: 50%;
 	background-color: rgb(50, 74, 95);
