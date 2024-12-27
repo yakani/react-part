@@ -404,5 +404,9 @@ width: 100%;
     top: 0px ;
     
   }
+  .gridimg{
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 5px;
+  }
  }
  
