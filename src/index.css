@@ -404,6 +404,9 @@ width: 100%;
     top: 0px ;
     
   }
+ 
+ }
+ @media screen and (max-width:993px) {
   .gridimg{
     grid-template-columns: repeat(3,1fr);
     column-gap: 5px;
