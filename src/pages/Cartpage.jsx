@@ -46,9 +46,6 @@ try {
 setgoals(resp);
 } catch (error) {
   console.log(error);
-}finally{
- 
-
 }
     }
     getgoal();

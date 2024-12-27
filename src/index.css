@@ -367,10 +367,13 @@ font-size: 20px;
  }
  .gridbox, .orders{
 display: flex;
-grid-template-columns: repeat(3,1fr);
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
 box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border-bottom-right-radius: 20px;
 border-bottom-left-radius: 20px;
+width: 100%;
  }
  .imgorder{
   width: 200px;
