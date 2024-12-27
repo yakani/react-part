@@ -51,7 +51,7 @@ setgoals(resp);
     getgoal();
   },[]);
   useEffect(() => {
-    fetch(api+"/api/v2/trans/user",{
+    fetch(api+"/api/v2/trans/orders",{
      credentials:"include",
     }).then(async (r) => {
       const resp = await r.json();
