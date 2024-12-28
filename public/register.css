@@ -10,15 +10,9 @@ body{
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	animation: move 30s infinite;
-	background: url(photos/airfor.webp);
+	
 }
-@keyframes move { 
-  from {
-    background-color: url(photos/airfor.webp);}
-    to {background: url(photos/f1.jpg);}
-  
-}
+
 .container{
 width: 600px;
 	height: 100%;
