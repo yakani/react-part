@@ -32,7 +32,11 @@ const Adminlogin = ({Getcode}) => {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"/>
    </Helmet>
-   <ToastContainer/>
+  
+   <ToastContainer/> 
+   <video autoplay loop muted className='videofixed'>
+      <source src="/photos/nashmood.mp4" type="video/mp4" />
+    </video>
    <form  class="container login" >
 <div><input type="submit" value={message} onClick={Sendcode} class="a" data-send/></div>
 <div>

@@ -54,7 +54,7 @@ const UpdateItempage = ({Updateitem,admin}) => {
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"/>
     </Helmet>
     <video autoplay loop muted className='videofixed'>
-      <source srcset="/photos/nashmood.mp4" type="video/mp4" />
+      <source src="/photos/nashmood.mp4" type="video/mp4" />
     </video>
     <ToastContainer/>
     <form  className="container specialer" id="register" enctype="multipart/form-data">
