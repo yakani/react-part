@@ -11,7 +11,6 @@ const Deviler = ({Remove}) => {
   const [tasks,settasks] = useState([]);
   const url = "https://backend-iota-three-50.vercel.app";
   const [loading,setloading] = useState(true);
-  const {id} = useParams();
   useEffect(()=>{
     const Gettask = async() =>{
         try {

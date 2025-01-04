@@ -76,10 +76,12 @@ placeholder{
 	text-transform: uppercase;
 }
 .videofixed{
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-	position: fixed;
+	min-width: 100%;
+    min-height: 90%;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
 }
 .btn{
 	width: 50%;
