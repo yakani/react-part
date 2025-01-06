@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import Spinner from '../component/Spinner';
 import { toast } from 'react-toastify';
-const Productpage = ({userid}) => {
+const Productpage = ({userid , ishome}) => {
     const { id } = useParams();
     const  goal = useLoaderData();
     const [imager,setimage] = useState(goal.img[0].picture);
@@ -23,6 +23,7 @@ const Productpage = ({userid}) => {
         
     }
     const introduce= ()=>{
+        if(ishome){return navigate('/login');}
         if(quatity==0)return toast.error('how many item do you want');
         const data={
             user:userid,
