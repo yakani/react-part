@@ -6,7 +6,7 @@ const saveAdmin = ()=>{
     localStorage.setItem('timeoutadmin', JSON.stringify(admintime));
   }
   const code = async ()=>{
-    admintime= {date: Date.now()};
+    admintime= {date: Date.now() + 24*60*60*1000};
     isadmin={admin:true};
     saveAdmin();
     const res = await fetch(url+"/api/v2/user/admin",{
