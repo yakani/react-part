@@ -1,13 +1,13 @@
-let isadmin = localStorage.getItem('isadmin');
-let admintime = localStorage.getItem('timeoutadmin');
+let isadmin =JSON.parse(localStorage.getItem('isadmin')) || {}; 
+let admintime = JSON.parse(localStorage.getItem('timeoutadmin')) || {};
 const url = "https://backend-iota-three-50.vercel.app";
 const saveAdmin = ()=>{
-    localStorage.setItem('isadmin',isadmin);
-    localStorage.setItem('timeoutadmin',admintime);
+    localStorage.setItem('isadmin',JSON.stringify(isadmin));
+    localStorage.setItem('timeoutadmin', JSON.stringify(admintime));
   }
   const code = async ()=>{
-    admintime=Date.now();
-    isadmin=true;
+    admintime= {date: Date.now()};
+    isadmin={admin:true};
     saveAdmin();
     const res = await fetch(url+"/api/v2/user/admin",{
       method:"POST"
@@ -16,8 +16,8 @@ const saveAdmin = ()=>{
     return resp.pass;
   }
   const AdminLogout = ()=>{
-    admintime=0;
-    isadmin=false;
+    admintime={date:0};
+    isadmin={admin:false};
     saveAdmin();
   }
   export {

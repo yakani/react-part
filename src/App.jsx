@@ -33,15 +33,15 @@ import AddItempage from './pages/AddItempage';
 import Compliationpage from './pages/Compliationpage';
 function App() {
   let ishome =localStorage.getItem('ishome');
-  let isadmin = localStorage.getItem('isadmin');
-  let admintime = localStorage.getItem('timeoutadmin');
+  let isadmin = JSON.parse(localStorage.getItem('isadmin')) ;
+  let admintime = JSON.parse(localStorage.getItem('timeoutadmin')) ;
   let d = new Date();
   const user = userdata();
 let home = ishome=='false' ? false : true;
  const checkadmin = ()=>{
-  if(admintime==0 || admintime<Date.now()){
-    isadmin=false;
-    admintime=0;
+  if(admintime.date==0 || admintime.date <= Date.now()){
+    isadmin.admin=false;
+    admintime.date=0;
     saveAdmin();
   }
   return;
@@ -50,14 +50,14 @@ checkadmin();
 
 const router= createBrowserRouter(createRoutesFromElements(
   <>
-  <Route path="/item/update/:id" element={<UpdateItempage UpdateItem={Updateitem}  admin={isadmin == 'false' ? false : true} />} loader={Productloader}  />
-   <Route path="/item" element={<AddItempage Additem={AddItem} admin={isadmin == 'false' ? false : true} />}   />
+  <Route path="/item/update/:id" element={<UpdateItempage UpdateItem={Updateitem}  admin={isadmin.admin} />} loader={Productloader}  />
+   <Route path="/item" element={<AddItempage Additem={AddItem} admin={isadmin.admin} />}   />
    <Route path="/admin/login" element={<Adminlogin Getcode={code} />}   />
    <Route path="/login" element={<Loginpage insert={Login} type={'user'}  Google={SingIn} />}   />
    <Route path="/payment/:id" element={<Payment />}   />
   <Route path="/register" element={<Registerpage insert={insertuser} type={'user'} Google={SingUp} />}  />
-  <Route path="/deliver/register" element={<Registerpage insert={insertdeliver} type={'deliver'} admin={isadmin=='false' ? false : true} />}  />
-  <Route path="/admin" element={<AdimPage Item_remove={DeleteItem} Delete_deliver={DeleteDeliver} admin={isadmin=='false' ? false : true} Logout={AdminLogout} />} />
+  <Route path="/deliver/register" element={<Registerpage insert={insertdeliver} type={'deliver'} admin={isadmin.admin} />}  />
+  <Route path="/admin" element={<AdimPage Item_remove={DeleteItem} Delete_deliver={DeleteDeliver} admin={isadmin.admin} Logout={AdminLogout} />} />
   <Route path="/deliver/login" element={<Loginpage insert={LoginDeliver}  type={'deliver'}/>}  />
   <Route path="/deliver/:id" element={<Deviler  Remove={DeleteTrans} />} loader={DataDeliver} />
   <Route path="/update" element={<Uptadeuser userupdate={update} />}   loader={userdata} />

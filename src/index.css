@@ -157,7 +157,6 @@ button{
   list-style-type:none;
 }
 .links{
-  marker: none;
   text-decoration: none;
 }
 .nav-link:hover{
