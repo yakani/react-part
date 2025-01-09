@@ -38,12 +38,13 @@ const Loginpage = ({insert,type,Google}) => {
         },
         body:JSON.stringify(params)
       });
+      return await res.json()._id;
 
     }
     try {
-      IdemUP(data);
+      const id = IdemUP(data);
       toast.success('good');
-      navigate(type=='user' ? '/shop' : '/deliver/'+res);
+      navigate(type=='user' ? '/shop' : '/deliver/'+id);
     } catch (error) {
       toast.error(error.msg);
     }
