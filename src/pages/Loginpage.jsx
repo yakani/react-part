@@ -38,7 +38,8 @@ const Loginpage = ({insert,type,Google}) => {
         },
         body:JSON.stringify(params)
       });
-      return await res.json()._id;
+      const resp =await res.json() ;
+      return resp._id ;
 
     }
     try {
