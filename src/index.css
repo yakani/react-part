@@ -218,14 +218,16 @@ cursor: pointer;
 
 }
 .trans-card .trans-text{
-  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 .trans-cards{
   padding: 20px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
 }
 .trans-text{
   text-align: center;
