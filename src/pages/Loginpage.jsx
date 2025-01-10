@@ -42,7 +42,7 @@ const Loginpage = ({insert,type,Google}) => {
     try {
        IdemUP(data);
       toast.success('good');
-      if(type == "user")return navigate('/shop');
+       navigate(type == "user" ? '/shop':'/deliver');
     } catch (error) {
       toast.error(error.msg);
     }

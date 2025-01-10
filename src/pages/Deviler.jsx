@@ -52,10 +52,10 @@ const Deviler = ({Remove}) => {
   </section></>
   )
 }
-const DataDeliver = async({params})=>{
+const DataDeliver = async()=>{
     try {
       const url = "https://backend-iota-three-50.vercel.app";
-const res = await fetch(url+'/api/v2/deliver/'+params._id,{
+const res = await fetch(url+'/api/v2/deliver/unic',{
   credentials:"include"
 });
   const resp = await res.json();

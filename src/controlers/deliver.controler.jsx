@@ -5,6 +5,7 @@ const LoginDeliver = async(params)=>{
       headers:{
         'Content-Type':'application/json'
       },
+      credentials: "include",
       body:JSON.stringify(params)
     });
     const resp = await res.json();
@@ -13,9 +14,10 @@ const LoginDeliver = async(params)=>{
 
  }
 
- const DeleteDeliver = async (id)=>{
-    const res =  await fetch(url+'/api/v2/deliver/'+id,{
+ const DeleteDeliver = async ()=>{
+    const res =  await fetch(url+'/api/v2/deliver',{
       method:"DELETE",
+      credentials:"include"
       
     });
     return;

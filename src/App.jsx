@@ -59,7 +59,7 @@ const router= createBrowserRouter(createRoutesFromElements(
   <Route path="/deliver/register" element={<Registerpage insert={insertdeliver} type={'deliver'} admin={isadmin.admin} />}  />
   <Route path="/admin" element={<AdimPage Item_remove={DeleteItem} Delete_deliver={DeleteDeliver} admin={isadmin.admin} Logout={AdminLogout} />} />
   <Route path="/deliver/login" element={<Loginpage insert={LoginDeliver}  type={'deliver'}/>}  />
-  <Route path="/deliver/:id" element={<Deviler  Remove={DeleteTrans} />} loader={DataDeliver} />
+  <Route path="/deliver" element={<Deviler  Remove={DeleteTrans} />} loader={DataDeliver} />
   <Route path="/update" element={<Uptadeuser userupdate={update} />}   loader={userdata} />
    <Route path="/" element={<Mainlayout ishomer={home} data={userdata} />}>
     <Route index element={<Homepage product={Get_goal} />} />
