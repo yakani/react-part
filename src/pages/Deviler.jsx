@@ -44,11 +44,11 @@ const Deviler = ({Remove}) => {
   </Helmet>
   <ToastContainer/>
   <section id="featured" className="my-5 pb-5">
-        <div className="container text-center">
-            <div className="row row-cols-auto" id="all">
+       
+            <div className="trans-cards" id="all">
   {loading ? <Spinner loading={loading}/> :(tasks.length!==0 ? tasks.map(task=><Eachtask Remove={Remove} task={task}  key={task._id} />): <div className='col'><h1>NO command</h1></div>)}
   </div>
-  </div>
+ 
   </section></>
   )
 }

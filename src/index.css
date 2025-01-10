@@ -212,7 +212,31 @@ cursor: pointer;
   max-height: 35vh;
   box-shadow: 10px 10px 5px grey;
 }
+.trans-card .trans-body{
+  margin: 20px auto;
+  padding: 20px auto;
 
+}
+.trans-card .trans-text{
+  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.trans-cards{
+  padding: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.trans-text{
+  text-align: center;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.trans-body{
+  display: gird;
+  grid-template-columns: repeat(1,1fr);
+
+}
 .rotate:hover{
 
   transform: rotateY(45deg);
