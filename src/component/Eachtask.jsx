@@ -19,7 +19,7 @@ const Eachtask = ({Remove,task}) => {
                         <h5 className="trans-text"> { "Name: "+task.user.name} </h5>
                         <p className="trans-text"> {"Tel:"+task.user.telephone} </p>
                         <p className="trans-text"> {"Adress:"+task.user.adress} </p>
-                        <h5 className="trans-text"> {"product " + task.product.name + ",size" +task.product.qty } </h5>
+                        <h5 className="trans-text"> {"product: " + task.product.name + ",size" +task.product.qty } </h5>
                         <p className="trans-text"> {"pay:"+(task.product.qty*task.product.price)} </p>
                         <button  className="btn btn-card" onClick={()=>Goodtask(task._id)}>good</button>
                         <button  className="btn btn-card" onClick={()=>Removetask(task._id)}>remove</button>

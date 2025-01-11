@@ -251,6 +251,7 @@ cursor: pointer;
   text-align: center;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  padding:10px auto;
 }
 .trans-body{
   display: gird;
