@@ -212,13 +212,31 @@ cursor: pointer;
   max-height: 35vh;
   box-shadow: 10px 10px 5px grey;
 }
-.trans-card .trans-body{
+.trans-body{
   margin: 20px auto;
   padding: 20px auto;
 
 }
-.trans-card .trans-text{
-  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.trans-card{
+  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.45);
+  margin: 20px auto;
+  padding: 20px auto;
+}
+.btn-card{
+  text-align:center;
+  font-size:20px;
+  background-color:rgba(79, 197, 158, 0.54);
+  margin:10px auto;
+  transition:1s;
+}
+.btn-card:hover{
+  cursor:pointer;
+  background-color:rgba(79, 197, 158, 0.84);
+  transition:1s;
+  font-size:30px;
+}
+.trans-text{
+  box-shadow:0 6px 20px 0 #0000001f;
   
 }
 .trans-cards{
