@@ -39,7 +39,10 @@ body{
 	width: 100%;
 	
 }
-
+img{
+	width: 200px ;
+	
+}
 
 .container{
 	display: flex;
