@@ -60,7 +60,7 @@ const Loginpage = ({insert,type,Google}) => {
     	<form  className=" login" >
 <div className="container">
 <div className='mb-6 p-7 justify-center items-center'> 
-      <img src="/photos/logo.jpg" alt="" />
+      <img src="/photos/logo.jpg" className='w-200 ' alt="" />
           <h2 className='text-3xs text-center font-pregular text-gray-700 '>SignIn</h2>
           
         </div>
@@ -85,9 +85,9 @@ const Loginpage = ({insert,type,Google}) => {
 </div>
 <div className='mt-7'>
 {type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center w-200" onClick={LoginGoogle}>SignIn with Google</button></> : <></>}
-<p className='text-lg text-gray-300 font-pregular text-center'>Don't have an account? </p><a href="/register">SignUp</a>
-<a className='text-lg text-gray-300 font-pregular text-center' href={type=='user' ? '/deliver/login':'/login'}>{type=='user' ? 'SignIn as deliver':'SignIn as user'} </a>
-<a className='text-lg text-gray-300 font-pregular text-center' href="/admin/login">SignIn as admin</a></div>
+<p className='text-lg text-gray-300 font-pregular text-center text-decoration-none'>Don't have an account? </p><a href="/register">SignUp</a>
+<a className='text-lg text-gray-300 font-pregular text-center text-decoration-none' href={type=='user' ? '/deliver/login':'/login'}>{type=='user' ? 'SignIn as deliver':'SignIn as user'} </a>
+<a className='text-lg text-gray-300 font-pregular text-center text-decoration-none' href="/admin/login">SignIn as admin</a></div>
 
 
 </form>

@@ -76,7 +76,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
   <form  className="login" >
       <div className="container">
       <div className='mb-6 p-7 justify-center items-center'> 
-      <img src="/photos/logo.jpg" alt="" />
+      <img src="/photos/logo.jpg" alt=""  className='w-200 '/>
           <h2 className='text-3xs text-center font-pregular text-gray-700 '>SignUp</h2>
           
         </div>
@@ -143,7 +143,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
              </div>  
              <div><input type="submit" name="submit" id="login" className="a" onClick={userinsert} /></div></div>
 
-            {type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center"  onClick={SingUpGoogle}>SingUP with Google</button></> : <></>}
+            {type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center text-decoration-none"  onClick={SingUpGoogle}>SingUP with Google</button></> : <></>}
             <div><p className='text-lg text-gray-300 font-pregular text-center'>Have already an account </p><a href="/login">SignIn</a></div>
 			 
 </form>
