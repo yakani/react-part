@@ -57,8 +57,13 @@ const Loginpage = ({insert,type,Google}) => {
       <source src="/photos/nashmood.mp4" type="video/mp4" />
     </video>
     <ToastContainer/>
-    	<form  className="container login" >
-
+    	<form  className=" login" >
+<div className="container">
+<div className='mb-6 p-7 justify-center items-center'> 
+      <img src="/photos/logo.jpg" alt="" />
+          <h2 className='text-3xs text-center font-pregular text-gray-700 '>SignIn</h2>
+          
+        </div>
 <div>    
 <label
                 htmlFor="email"
@@ -77,10 +82,12 @@ const Loginpage = ({insert,type,Google}) => {
 
 </div>
 <div> <input type="submit" name="submit" id="login" className="a" onClick={loginuser} /> </div>
-{type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center" onClick={LoginGoogle}>SignIn with Google</button></> : <></>}
-<div><p className='text-lg text-gray-300 font-pregular text-center'>Don't have an account? </p><a href="/register">SignUp</a></div>
-<div><a className='text-lg text-gray-300 font-pregular text-center' href={type=='user' ? '/deliver/login':'/login'}>{type=='user' ? 'SignIn as deliver':'SignIn as user'} </a></div>
-<div><a className='text-lg text-gray-300 font-pregular text-center' href="/admin/login">SignIn as admin</a></div>
+</div>
+<div className='mt-7'>
+{type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center w-200" onClick={LoginGoogle}>SignIn with Google</button></> : <></>}
+<p className='text-lg text-gray-300 font-pregular text-center'>Don't have an account? </p><a href="/register">SignUp</a>
+<a className='text-lg text-gray-300 font-pregular text-center' href={type=='user' ? '/deliver/login':'/login'}>{type=='user' ? 'SignIn as deliver':'SignIn as user'} </a>
+<a className='text-lg text-gray-300 font-pregular text-center' href="/admin/login">SignIn as admin</a></div>
 
 
 </form>

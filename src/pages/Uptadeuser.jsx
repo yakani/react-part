@@ -62,8 +62,13 @@ const Uptadeuser = ({userupdate}) => {
       <source src="/photos/nashmood.mp4" type="video/mp4" />
     </video>
    <ToastContainer/>
-    <form  className="container" >
-    <div className="">
+    <form  className="login" >
+      <div className="container">
+        <div className='mb-6 p-7 justify-center items-center'> 
+          <p className='text-3xs text-center font-pregular '>Edit account </p>
+        
+        </div>
+    <div className=" ">
         <a
           href="/account" 
         >
@@ -118,7 +123,7 @@ const Uptadeuser = ({userupdate}) => {
  
 
     <div> <button classNameName="text-lg text-gray-300 font-pregular text-center"  style={{fontSize:"15px", backgroundColor:"#6b11e0"}} onClick={updater} >send</button> </div>
-    
+    </div>
     
     
 </form>

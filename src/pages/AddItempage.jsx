@@ -59,8 +59,13 @@ const AddItempage = ({Additem,admin}) => {
       <source srcset="/photos/nashmood.mp4" type="video/mp4" />
     </video>
     <ToastContainer/>
-    <form  className="container specialer" id="register" enctype="multipart/form-data">
-      
+    <form  className="login"  enctype="multipart/form-data">
+    <div className="container">
+    <div className='mb-6 p-7 justify-center items-center'> 
+   
+          <h2 className='text-3xs text-center font-pregular text-gray-700 '>Add product</h2>
+          
+        </div>
         <div>
         <label
                 htmlFor="name"
@@ -118,7 +123,7 @@ const AddItempage = ({Additem,admin}) => {
 			 <input type="text" name="cat" placeholder="enter the category" id="i-cat" onChange={(e)=>setcategory(e.target.value)} required/>
 			 
 			</div>
-			<div> <input type="submit" name="submit" onClick={Submititem}  className="a"/> </div>
+			<div> <input type="submit" name="submit" onClick={Submititem}  className="a"/> </div></div>
 			
 </form>
     </>

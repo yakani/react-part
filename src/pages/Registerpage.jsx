@@ -73,8 +73,13 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
       <source src="/photos/nashmood.mp4" type="video/mp4" />
     </video>
     <ToastContainer/>
-  <form  className="container specialer" >
-
+  <form  className="login" >
+      <div className="container">
+      <div className='mb-6 p-7 justify-center items-center'> 
+      <img src="/photos/logo.jpg" alt="" />
+          <h2 className='text-3xs text-center font-pregular text-gray-700 '>SignUp</h2>
+          
+        </div>
         <div>
         <label
                 htmlFor="name"
@@ -136,7 +141,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
               >
                 <input type="password"  name="pwd2" placeholder="confirm your password  " value={password2} id="u-pwd2" onChange={(e)=>{setpassword2(e.target.value)}} required />
              </div>  
-             <div><input type="submit" name="submit" id="login" className="a" onClick={userinsert} /></div>
+             <div><input type="submit" name="submit" id="login" className="a" onClick={userinsert} /></div></div>
 
             {type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center"  onClick={SingUpGoogle}>SingUP with Google</button></> : <></>}
             <div><p className='text-lg text-gray-300 font-pregular text-center'>Have already an account </p><a href="/login">SignIn</a></div>
