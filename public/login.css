@@ -51,7 +51,8 @@ img{
 	justify-content: center;
 }
 .login{
-	min-height: 100vh;
+	min-height: 90vh;
+	width:100%;
 	border: 1px solid;
 	background:rgb(247 247 247 / 95%);
 	box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
