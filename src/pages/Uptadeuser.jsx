@@ -56,7 +56,7 @@ const Uptadeuser = ({userupdate}) => {
   return (
     <>
     <Helmet>
-        <link rel='stylesheet' href="/register.css"/>
+        <link rel='stylesheet' href="/login.css"/>
     </Helmet>
     <video autoplay loop muted className='videofixed'>
       <source src="/photos/nashmood.mp4" type="video/mp4" />
@@ -117,7 +117,7 @@ const Uptadeuser = ({userupdate}) => {
 
  
 
-    <div> <button classNameName="btn-user"  style={{fontSize:"15px", backgroundColor:"#6b11e0"}} onClick={updater} >send</button> </div>
+    <div> <button classNameName="text-lg text-gray-300 font-pregular text-center"  style={{fontSize:"15px", backgroundColor:"#6b11e0"}} onClick={updater} >send</button> </div>
     
     
     

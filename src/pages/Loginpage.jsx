@@ -77,10 +77,10 @@ const Loginpage = ({insert,type,Google}) => {
 
 </div>
 <div> <input type="submit" name="submit" id="login" className="a" onClick={loginuser} /> </div>
-{type=='user' ? <><button className="a google" id="google" onClick={LoginGoogle}>GOOGLE SINGIN</button></> : <></>}
-<div><a href="/register">register here</a></div>
-<div><a href={type=='user' ? '/deliver/login':'/login'}>{type=='user' ? 'login as deliver':'login as user'} </a></div>
-<div><a href="/admin/login">login as admin</a></div>
+{type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center" onClick={LoginGoogle}>SignIn with Google</button></> : <></>}
+<div><p className='text-lg text-gray-300 font-pregular text-center'>Don't have an account? </p><a href="/register">SignUp</a></div>
+<div><a className='text-lg text-gray-300 font-pregular text-center' href={type=='user' ? '/deliver/login':'/login'}>{type=='user' ? 'SignIn as deliver':'SignIn as user'} </a></div>
+<div><a className='text-lg text-gray-300 font-pregular text-center' href="/admin/login">SignIn as admin</a></div>
 
 
 </form>

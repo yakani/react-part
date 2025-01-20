@@ -67,7 +67,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
   return (
   <>
    <Helmet>
-      <link rel='stylesheet' href='/register.css'/>
+      <link rel='stylesheet' href='/login.css'/>
     </Helmet>
     <video autoplay loop muted className='videofixed'>
       <source src="/photos/nashmood.mp4" type="video/mp4" />
@@ -138,8 +138,8 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
              </div>  
              <div><input type="submit" name="submit" id="login" className="a" onClick={userinsert} /></div>
 
-            {type=='user' ? <><button className="a google" id="google" onClick={SingUpGoogle}>SingUP with Google</button></> : <></>}
-            <div><a href="/login">LOGIN</a></div>
+            {type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center"  onClick={SingUpGoogle}>SingUP with Google</button></> : <></>}
+            <div><p className='text-lg text-gray-300 font-pregular text-center'>Have already an account </p><a href="/login">SignIn</a></div>
 			 
 </form>
   </>
