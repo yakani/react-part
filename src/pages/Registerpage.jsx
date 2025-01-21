@@ -79,12 +79,13 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
         />
     <ToastContainer/>
   <form  className="login" >
-      <div className="container">
-      <div className='mb-6 p-7 justify-center items-center'> 
+    <div className='btn-container'> 
       <img src="/photos/logo.jpg" alt=""  className='w-200 '/>
           <h2 className='text-3xs text-center font-pregular text-gray-700 '>SignUp</h2>
           
         </div>
+      <div className="container">
+      
         <div>
         <label
                 htmlFor="name"

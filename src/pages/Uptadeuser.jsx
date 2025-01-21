@@ -58,16 +58,22 @@ const Uptadeuser = ({userupdate}) => {
     <Helmet>
         <link rel='stylesheet' href="/login.css"/>
     </Helmet>
-    <video autoplay loop muted className='videofixed'>
-      <source src="/photos/nashmood.mp4" type="video/mp4" />
-    </video>
+    <video
+            src='/photos/nashmood.mp4'
+           className='videofixed'
+            controls
+            autoPlay
+            muted
+            loop
+        />
    <ToastContainer/>
-    <form  className="login" >
-      <div className="container">
-        <div className='mb-6 p-7 justify-center items-center'> 
-          <p className='text-3xs text-center font-pregular '>Edit account </p>
+    <form  className="login" >  
+       <div className='btn-container'> 
+          <h2 className='text-3xs text-center font-pregular '>Edit account </h2>
         
         </div>
+      <div className="container">
+     
     <div className=" ">
         <a
           href="/account" 

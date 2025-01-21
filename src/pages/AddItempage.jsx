@@ -55,17 +55,23 @@ const AddItempage = ({Additem,admin}) => {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"/>
     </Helmet>
-    <video autoplay loop muted className='videofixed'>
-      <source srcset="/photos/nashmood.mp4" type="video/mp4" />
-    </video>
+    <video
+            src='/photos/nashmood.mp4'
+           className='videofixed'
+            controls
+            autoPlay
+            muted
+            loop
+        />
     <ToastContainer/>
-    <form  className="login"  enctype="multipart/form-data">
-    <div className="container">
-    <div className='mb-6 p-7 justify-center items-center'> 
+    <form  className="login"  enctype="multipart/form-data">  
+     <div className='btn-container'> 
    
           <h2 className='text-3xs text-center font-pregular text-gray-700 '>Add product</h2>
           
         </div>
+    <div className="container">
+ 
         <div>
         <label
                 htmlFor="name"

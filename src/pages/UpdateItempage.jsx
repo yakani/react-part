@@ -53,22 +53,28 @@ const UpdateItempage = ({Updateitem,admin}) => {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"/>
     </Helmet>
-    <video autoplay loop muted className='videofixed'>
-      <source src="/photos/nashmood.mp4" type="video/mp4" />
-    </video>
+    <video
+            src='/photos/nashmood.mp4'
+           className='videofixed'
+            controls
+            autoPlay
+            muted
+            loop
+        />
     <ToastContainer/>
-    <form  className="login" enctype="multipart/form-data">
-    <div className="container">
-      <div><a href="/admin">
+    <form  className="login" enctype="multipart/form-data"> 
+    <div><a href="/admin">
       
       <FaArrowLeft className='mr-2'/>go back
       </a></div>
         <div>
-        <div className='mb-6 p-7 justify-center items-center'> 
+        <div className='btn-container'> 
     
           <h2 className='text-3xs text-center font-pregular text-gray-700 '>Edit Product</h2>
           
         </div>
+    <div className="container">
+     
         <label
                 htmlFor="name"
                 className="block text-gray-700 font-bold mb-2"

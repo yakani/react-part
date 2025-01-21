@@ -63,12 +63,13 @@ const Loginpage = ({insert,type,Google}) => {
         />
     <ToastContainer/>
     	<form  className=" login" >
-<div className="container">
-<div className='mb-6 p-7 items-center'> 
+        <div className='btn-container'> 
       <img src="/photos/logo.jpg" className='w-200 ' alt="" />
           <h2 className='text-3xs text-center font-pregular text-gray-700 '>SignIn</h2>
           
         </div>
+<div className="container">
+
 <div>    
 <label
                 htmlFor="email"
