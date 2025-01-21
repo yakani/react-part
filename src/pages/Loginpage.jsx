@@ -88,7 +88,7 @@ const Loginpage = ({insert,type,Google}) => {
 </div>
 <div> <input type="submit" name="submit" id="login" className="a" onClick={loginuser} /> </div>
 </div>
-<div className='mt-7 justify-content-center flex-column align-items-center p-4'>
+<div className='btn-container'>
 {type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center w-200" onClick={LoginGoogle}>SignIn with Google</button></> : <></>}
 <p className='text-lg text-gray-300 font-pregular text-center text-decoration-none'>Don't have an account? </p><a href="/register">SignUp</a>
 <a className='text-lg text-gray-300 font-pregular text-center text-decoration-none' href={type=='user' ? '/deliver/login':'/login'}>{type=='user' ? 'SignIn as deliver':'SignIn as user'} </a>
