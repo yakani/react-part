@@ -121,7 +121,7 @@ placeholder{
 @media screen and (max-width :550px) {
 
 	.login{
-		width: 25vh;
+		width: 500px;
 		height: 100%;
 		margin: 20px;
 	}
