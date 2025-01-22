@@ -92,13 +92,11 @@ input{
 a {
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
-	color: aliceblue;
 	text-align: center;
 	margin: 10px;
 }
 .a{
 	
-	color: rgba(0, 0, 0, 0.164);
 	text-align: center;
 	text-decoration: none;
 	transition: 0.5s;
@@ -124,7 +122,7 @@ placeholder{
 @media screen and (max-width :550px) {
 
 	.login{
-		width: 300px;
+		width: 500px;
 		height: 100%;
 		margin: 20px;
 	}
