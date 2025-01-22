@@ -149,7 +149,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
              </div>  
              <div><input type="submit" name="submit" id="login" className="a" onClick={userinsert} /></div></div>
 
-            {type=='user' ? <><button className="text-lg text-gray-300 font-pregular text-center text-decoration-none a "  onClick={SingUpGoogle}>SingUP with Google <img src="/photos/google.png" style={{width:"50px"}} alt="" /></button></> : <></>}
+            {type=='user' ? <><button className=" a"  style={{textTransform:"none"}} onClick={SingUpGoogle}>SignUp with Google <img src="/photos/google.png" style={{width:"50px"}} alt="" /></button></> : <></>}
             <div><p className='text-lg text-gray-300 font-pregular text-center'>Have already an account <a href="/login">SignIn</a></p></div>
 			 
 </form>
