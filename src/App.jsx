@@ -33,7 +33,7 @@ import AddItempage from './pages/AddItempage';
 import Compliationpage from './pages/Compliationpage';
 function App() {
   let ishome =localStorage.getItem('ishome');
-  let isadmin = JSON.parse(localStorage.getItem('isadmin')) ;
+  let isadmin = JSON.parse(localStorage.getItem('isadmin')) || {admin : false} ;
   let admintime = JSON.parse(localStorage.getItem('timeoutadmin')) || { date :0 };
   let d = new Date();
   const user = userdata();
