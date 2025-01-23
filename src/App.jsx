@@ -34,7 +34,7 @@ import Compliationpage from './pages/Compliationpage';
 function App() {
   let ishome =localStorage.getItem('ishome');
   let isadmin = JSON.parse(localStorage.getItem('isadmin')) ;
-  let admintime = JSON.parse(localStorage.getItem('timeoutadmin')) ;
+  let admintime = JSON.parse(localStorage.getItem('timeoutadmin')) || { date :0 };
   let d = new Date();
   const user = userdata();
 let home = ishome=='false' ? false : true;
