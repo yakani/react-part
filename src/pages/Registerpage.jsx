@@ -56,6 +56,11 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
             }
            
       try {
+        fetch("https://www.disify.com/api/email/"+data.email).then(
+          async(r)=>{
+            if(!r.format && !r.dns)return toast.error("email not valid");
+          }
+        );
     
           IdemUP(data);
       } catch (error) {

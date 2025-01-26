@@ -34,6 +34,11 @@ const Uptadeuser = ({userupdate}) => {
             country,
             Address:address
         };
+          fetch("https://www.disify.com/api/email/"+data.email).then(
+                  async(r)=>{
+                    if(!r.format && !r.dns)return toast.error("email not valid");
+                  }
+                );
         const confirm = window.confirm('are you sure to change');
         if(!confirm)return;
         const api =" https://backend-iota-three-50.vercel.app/api/v2";
