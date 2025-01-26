@@ -56,6 +56,11 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
             }
            
       try {
+        fetch("https://phonevalidation.abstractapi.com/v1/?api_key=38abd3017bb34b5c997b8d14ab1bfdc0&phone="+data.telephone).then(
+          async(r)=>{
+            if(!r.valid)return toast.error("telephone number  not valid");
+          }
+        );
         fetch("https://www.disify.com/api/email/"+data.email).then(
           async(r)=>{
             if(!r.format && !r.dns)return toast.error("email not valid");
@@ -105,7 +110,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
                 className="block text-gray-700 font-bold mb-2"
                 >Tel:</label
               >
-            <input type="tel"  name="tel" placeholder=" 00237 657 0789 95  " value={tel} onChange={(e)=>{settel(e.target.value)}} id="u-tel" required />
+            <input type="tel"  name="tel" placeholder=" 237 657 0789 95  " value={tel} onChange={(e)=>{settel(e.target.value)}} id="u-tel" required />
          </div>  
  
 	

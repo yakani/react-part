@@ -34,6 +34,11 @@ const Uptadeuser = ({userupdate}) => {
             country,
             Address:address
         };
+               fetch("https://phonevalidation.abstractapi.com/v1/?api_key=38abd3017bb34b5c997b8d14ab1bfdc0&phone="+data.telephone).then(
+                  async(r)=>{
+                    if(!r.valid)return toast.error("telephone number  not valid");
+                  }
+                );
           fetch("https://www.disify.com/api/email/"+data.email).then(
                   async(r)=>{
                     if(!r.format && !r.dns)return toast.error("email not valid");
@@ -100,7 +105,7 @@ const Uptadeuser = ({userupdate}) => {
                 className="block text-gray-700 font-bold mb-2"
                 >Tel:</label
               >
-    <input type="tel"  name="tel" placeholder="00273 655 0448 58 " id="u-tel"  value={tel} onChange={(e)=>settel(e.target.value)} required />
+    <input type="tel"  name="tel" placeholder="273 655 0448 58 " id="u-tel"  value={tel} onChange={(e)=>settel(e.target.value)} required />
  </div>  
 
 
