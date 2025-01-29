@@ -61,6 +61,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
 
         fetch("https://phonevalidation.abstractapi.com/v1/?api_key=38abd3017bb34b5c997b8d14ab1bfdc0&phone="+data.telephone).then(
           async(r)=>{
+            console.log(r);
             if(!r.valid){
               setvalue(false);
               return toast.error("telephone number  not valid");
@@ -68,6 +69,7 @@ const Registerpage = ({insert,type,admin=false,Google}) => {
           }
         ).then(  fetch("https://www.disify.com/api/email/"+data.email).then(
           async(r)=>{
+            console.log(r);
             if(!r.format && !r.dns){
               setvalue(false);
               return toast.error("email not valid");
