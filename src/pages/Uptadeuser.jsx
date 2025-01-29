@@ -147,7 +147,7 @@ const Uptadeuser = ({userupdate}) => {
 
  
 
-    <div> <button classNameName="text-lg text-gray-300 font-pregular text-center"  style={{fontSize:"15px", backgroundColor:"#6b11e0"}} onClick={updater} >send</button> </div>
+    <div>  {loading ? <Spinner loading={loading} size={20} />:<button classNameName="text-lg text-gray-300 font-pregular text-center"  style={{fontSize:"15px", backgroundColor:"#6b11e0"}} onClick={updater} >send</button>}  </div>
     </div>
     
     
