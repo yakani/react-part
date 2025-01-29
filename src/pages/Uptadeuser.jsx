@@ -27,7 +27,20 @@ const Uptadeuser = ({userupdate}) => {
         if(tel.length<12)return toast.error('invalid phone number');
         
         if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))return toast.error('invalid email');
-        
+        const api =" https://backend-iota-three-50.vercel.app/api/v2";
+        const IdemUP = async (params)=>{
+          const res = await fetch(api+'/user/update', {
+             method: 'PUT',
+            credentials: "include",
+            headers:{
+              'Content-Type':'application/json'
+            },
+            body:JSON.stringify(params)
+          });
+          if(res.ok){toast.success('insert');
+            setloading(false);
+        navigate('/');}
+        }
         const data = {
             name,
             email,
@@ -54,20 +67,7 @@ const Uptadeuser = ({userupdate}) => {
          
         const confirm = window.confirm('are you sure to change');
         if(!confirm)return;
-        const api =" https://backend-iota-three-50.vercel.app/api/v2";
-        const IdemUP = async (params)=>{
-          const res = await fetch(api+'/user/update', {
-             method: 'PUT',
-            credentials: "include",
-            headers:{
-              'Content-Type':'application/json'
-            },
-            body:JSON.stringify(params)
-          });
-          if(res.ok){toast.success('insert');
-            setloading(false);
-        navigate('/');}
-        }
+        
         
         
     };
