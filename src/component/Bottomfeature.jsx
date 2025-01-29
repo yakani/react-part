@@ -16,7 +16,7 @@ const Next = ()=>{
 }
   return (
     <>
-    <div className=" product text-center col-lg-3 col-md-4 col-12 m-2" onMouseOver={setvisbile(true)} onMouseOut={setvisbile(false)}>
+    <div className=" product text-center col-lg-3 col-md-4 col-12 m-2" onMouseOver={()=>setvisbile(true)} onMouseOut={()=>setvisbile(false)}>
       <div>{!visible ? <></> : <img src="/photos/next.jpg" className="next"  alt=""  onClick={Next}/>}
     <img className="img-fluid mb-3 rotate border" src={index > (goal.img).length - 1 ? goal.img[0].picture:goal.img[index].picture}  alt=""/>
       </div>
