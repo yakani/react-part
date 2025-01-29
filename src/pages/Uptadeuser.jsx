@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Uptadeuser = ({userupdate}) => {
    
     const user = useLoaderData();
-    const [loading,setloading] = useState(true);
+    const [loading,setloading] = useState(false);
     const navigate = useNavigate();
     const [name,setname] = useState(user.name);
     const [email,setemail] = useState(user.email);
@@ -23,7 +23,8 @@ const Uptadeuser = ({userupdate}) => {
    
     const updater = (e)=>{
         e.preventDefault();
-        if(tel.length<13)return toast.error('invalid phone number');
+        
+        if(tel.length<12)return toast.error('invalid phone number');
         
         if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))return toast.error('invalid email');
         
@@ -34,16 +35,23 @@ const Uptadeuser = ({userupdate}) => {
             country,
             Address:address
         };
+        setloading(true);
                fetch("https://phonevalidation.abstractapi.com/v1/?api_key=38abd3017bb34b5c997b8d14ab1bfdc0&phone="+data.telephone).then(
                   async(r)=>{
-                    if(!r.valid)return toast.error("telephone number  not valid");
+                    if(!r.valid) {
+                      setloading(false);
+                      return toast.error("telephone number  not valid");
+                    } 
                   }
-                );
-          fetch("https://www.disify.com/api/email/"+data.email).then(
+                ).then( fetch("https://www.disify.com/api/email/"+data.email).then(
                   async(r)=>{
-                    if(!r.format && !r.dns)return toast.error("email not valid");
+                    if(!r.format && !r.dns)  {
+                      setloading(false);
+                      return toast.error("email not valid");
+                    } 
                   }
-                );
+                ).then(IdemUP(data)));
+         
         const confirm = window.confirm('are you sure to change');
         if(!confirm)return;
         const api =" https://backend-iota-three-50.vercel.app/api/v2";
@@ -57,9 +65,10 @@ const Uptadeuser = ({userupdate}) => {
             body:JSON.stringify(params)
           });
           if(res.ok){toast.success('insert');
+            setloading(false);
         navigate('/');}
         }
-        IdemUP(data);
+        
         
     };
 
