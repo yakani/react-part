@@ -10,7 +10,8 @@ const navigate = useNavigate();
  
 const api = "https://backend-iota-three-50.vercel.app";
    useEffect(() => {
-     fetch(api+"/api/v2/const/unic/"+id,{
+    try {
+      fetch(api+"/api/v2/const/unic/"+id,{
         credentials:"include"
      }).then(async (r) => {
        const resp = await r.json();
@@ -28,6 +29,10 @@ const api = "https://backend-iota-three-50.vercel.app";
         navigate('/shop');
        });
      });
+    } catch (error) {
+      toast.error(error);
+    }
+     
    }, []);
    
   return (
