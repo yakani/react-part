@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
 const Cartpage = ({deleteproduct }) => {
   const navigate = useNavigate();
-  const [loading,setloading]=useState(false);
+  const [loading,setloading]=useState(true);
   const [goals,setgoals] = useState([]);
   const [lon,setlon] = useState(false);
   const [orders,setorders]= useState([]);
