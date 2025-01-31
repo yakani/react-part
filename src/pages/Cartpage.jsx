@@ -63,7 +63,7 @@ setgoals(resp);
   return (
     <>
 <section  class="container sproduct my-5 py-5" id="all">
-  {loading ? <Spinner loading={loading}/>: <dv className="gridbox">{((goals.length!=0) ? goals.map(goal=>
+  {loading ? <Spinner loading={loading} size={30}/>: <dv className="gridbox">{((goals.length!=0) ? goals.map(goal=>
 <div className='row mt-7' key={goal._id}>
   <div className='col-lg-5 col-md-12 col-12'><img src={goal.product.picture} alt="" className="ims-fluid w-100 pb-1 unique"/></div>
   <div className="col-lg-5 col-md-12 col-12">
@@ -75,7 +75,7 @@ setgoals(resp);
     <button className="buy-btn" onClick={()=>deleteidem(goal._id)}>Remove</button>
   </div>
 </div>):<div><h1>Cart is empty</h1></div>)}</dv>}
-{loading ? <Spinner loading={loading}/> : <div className='orders'><h1>Orders</h1>{orders.length == 0 ? <h1>no orders</h1>:orders.map(order =>
+{loading ? <Spinner loading={loading} size={30}/> : <div className='orders'><h1>Orders</h1>{orders.length == 0 ? <h1>no orders</h1>:orders.map(order =>
   <div className="cartorder" key={order._id}>
     <img src={order.product.picture} alt="" className="imgorder" />
     <h2>{"size "+ order.product.size}</h2>
